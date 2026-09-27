@@ -26,7 +26,7 @@ const highlights = [
 const commitments = [
   'Any make, model or condition considered',
   'Free doorstep collection across our service areas',
-  'Deregistration and RTO paperwork guided end to end',
+  'RC cancellation, deregistration and RTO paperwork guided end to end',
   'Environmentally responsible depollution and recycling'
 ];
 
@@ -53,10 +53,14 @@ export default function AboutBusiness() {
               <div className="group relative overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-40px_rgba(8,9,10,0.5)]">
                 <img
                   src={business.aboutImage.src}
-                  srcSet={`${business.aboutImage.thumbnail} 600w, ${business.aboutImage.src} 1200w`}
+                  srcSet={business.aboutImage.srcSet}
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  width={business.aboutImage.width}
+                  height={business.aboutImage.height}
                   alt={business.aboutImage.alt}
+                  title={business.aboutImage.title}
                   loading="lazy"
+                  decoding="async"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent" />
@@ -91,13 +95,18 @@ export default function AboutBusiness() {
             >
               <span className="eyebrow mb-5">About Our Business</span>
               <h2 className="display mb-7 text-3xl text-brand-black md:text-5xl">
-                Your trusted automotive partner in {business.address.city}
+                A scrap car buyer you can trust, based in {business.address.city}
               </h2>
 
-              <p className="lede mb-8 text-lg font-light leading-relaxed text-brand-muted">
-                We provide scrap car and old vehicle services across {business.serviceAreas.join(', ')}. Our
-                focus is reliable service, transparent communication, and convenient support for customers
-                dealing with old, damaged, unwanted or scrap vehicles.
+              <p className="lede mb-5 text-lg font-light leading-relaxed text-brand-muted">
+                {business.name} buys scrap, old, damaged and end-of-life vehicles (ELVs) across Punjab, Delhi
+                NCR, Uttarakhand and {business.address.city}. We make old car disposal simple: a clear price,
+                free doorstep collection, payment on handover and RC cancellation guided with the RTO.
+              </p>
+              <p className="mb-8 text-[15px] font-light leading-relaxed text-brand-muted">
+                Every vehicle is depolluted before dismantling, usable parts are salvaged, and the remaining
+                metal goes for car recycling — responsible vehicle scrapping in line with India’s Vehicle
+                Scrapping Policy, so your car is legally off your name and out of the environment.
               </p>
 
               <ul className="mb-10 grid gap-3.5">

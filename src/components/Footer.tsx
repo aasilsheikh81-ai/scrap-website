@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, MessageCircle, ArrowRight, Recycle, Clock } from 'lucide-react';
 import { business } from '../config/business';
+import { servicePages } from '../content/services';
+import { locationPages } from '../content/locations';
 import {
   telHref,
   whatsappHref,
@@ -44,8 +46,8 @@ export default function Footer() {
             </Link>
 
             <p className="mb-8 max-w-md font-light leading-relaxed text-brand-muted">
-              Your trusted local partner for scrap cars, old vehicles and damaged vehicles. Fair valuations,
-              transparent dealing and professional service across {business.serviceAreas.join(', ')}.
+              Scrap car buyer and vehicle scrapping service for old, damaged and end-of-life vehicles. Free
+              pickup, fair valuations and RC cancellation support across {business.serviceAreas.join(', ')}.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -146,6 +148,40 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Sitewide internal links to every landing page */}
+        <div className="mb-14 grid grid-cols-1 gap-10 border-t border-white/[0.06] pt-12 md:grid-cols-2">
+          <nav aria-label="Services">
+            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-white">Scrap Car Services</h2>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {servicePages.map((page) => (
+                <li key={page.slug}>
+                  <Link
+                    to={`/${page.slug}`}
+                    className="text-sm font-light text-brand-muted transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                  >
+                    {page.navLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="Service areas">
+            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-white">Service Areas</h2>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {locationPages.map((page) => (
+                <li key={page.slug}>
+                  <Link
+                    to={`/${page.slug}`}
+                    className="text-sm font-light text-brand-muted transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                  >
+                    {page.h1}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 text-sm font-light text-brand-muted md:flex-row">

@@ -27,12 +27,12 @@ export default function Location() {
           transition={{ duration: 0.6, ease: easing }}
         >
           <span className="eyebrow eyebrow--center mb-5">Physical Business Location</span>
-          <h2 className="display mb-5 text-3xl md:text-5xl">Our location</h2>
+          <h2 className="display mb-5 text-3xl md:text-5xl">Visit our scrap yard in {business.address.city}</h2>
           <p className="mb-3 text-xl font-bold text-brand-red md:text-2xl">
             {business.address.city}, {business.address.state}
           </p>
           <p className="lede text-lg font-light leading-relaxed text-brand-muted">
-            Visit the yard or get in touch for more information about our scrap vehicle services.
+            Drop by the yard on Ambala Road to discuss your vehicle in person, or call ahead and we will have a valuation ready.
           </p>
         </motion.div>
 
@@ -49,10 +49,14 @@ export default function Location() {
             <div className="group relative mb-9 overflow-hidden rounded-2xl border border-white/10 shadow-lg">
               <img
                 src={business.locationImage.src}
-                srcSet={`${business.locationImage.thumbnail} 400w, ${business.locationImage.src} 800w`}
+                srcSet={business.locationImage.srcSet}
                 sizes="(max-width: 1024px) 100vw, 40vw"
+                width={business.locationImage.width}
+                height={business.locationImage.height}
                 alt={business.locationImage.alt}
+                title={business.locationImage.title}
                 loading="lazy"
+                decoding="async"
                 className="aspect-[16/8] w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/10 to-transparent" />

@@ -1,10 +1,32 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MobileActionBar from './components/MobileActionBar';
 import HomePage from './pages/HomePage';
-import ServiceAreaDetails from './components/ServiceAreaDetails';
+import { sectionAliases } from './content/homeSections';
+import LocationPage from './pages/LocationPage';
+import ServicePage from './pages/ServicePage';
+import NotFoundPage from './pages/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
+import { findLocationPage, findLocationByLegacySlug } from './content/locations';
+import { findServicePage } from './content/services';
+
+/** Top-level landing pages live at /<slug> — location pages and service pages share the namespace. */
+function SlugPage() {
+  const { slug = '' } = useParams();
+  const location = findLocationPage(slug);
+  if (location) return <LocationPage key={slug} page={location} />;
+  const service = findServicePage(slug);
+  if (service) return <ServicePage key={slug} page={service} />;
+  return <NotFoundPage />;
+}
+
+/** Old /service-areas/:slug URLs → new keyword URLs. Hosting-level 301s live in public/_redirects. */
+function LegacyAreaRedirect() {
+  const { slug = '' } = useParams();
+  const target = findLocationByLegacySlug(slug);
+  return target ? <Navigate to={`/${target.slug}`} replace /> : <NotFoundPage />;
+}
 
 function App() {
   return (
@@ -14,16 +36,13 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<HomePage />} />
-        <Route path="/services" element={<HomePage />} />
-        <Route path="/process" element={<HomePage />} />
-        <Route path="/service-areas" element={<HomePage />} />
-        <Route path="/gallery" element={<HomePage />} />
-        <Route path="/faq" element={<HomePage />} />
-        <Route path="/location" element={<HomePage />} />
-        <Route path="/contact" element={<HomePage />} />
-        <Route path="/service-areas/:slug" element={<ServiceAreaDetails />} />
-        <Route path="*" element={<HomePage />} />
+        {sectionAliases.map((alias) => (
+          <Route key={alias} path={alias} element={<HomePage />} />
+        ))}
+        <Route path="/service-areas" element={<Navigate to="/#service-areas" replace />} />
+        <Route path="/service-areas/:slug" element={<LegacyAreaRedirect />} />
+        <Route path="/:slug" element={<SlugPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
       <MobileActionBar />

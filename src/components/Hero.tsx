@@ -13,8 +13,8 @@ import {
 const easing = [0.16, 1, 0.3, 1] as const;
 
 const assurances = [
-  { icon: Truck, label: 'Free Vehicle Pickup' },
-  { icon: FileCheck2, label: 'RTO Paperwork Handled' },
+  { icon: Truck, label: 'Free Scrap Car Pickup' },
+  { icon: FileCheck2, label: 'RC Cancellation Support' },
   { icon: ShieldCheck, label: 'Transparent Valuation' }
 ];
 
@@ -33,9 +33,12 @@ export default function Hero() {
       >
         <img
           src={business.heroImage.src}
-          srcSet={`${business.heroImage.thumbnail} 600w, ${business.heroImage.src} 1920w`}
+          srcSet={business.heroImage.srcSet}
           sizes="100vw"
+          width={business.heroImage.width}
+          height={business.heroImage.height}
           alt={business.heroImage.alt}
+          title={business.heroImage.title}
           className="h-full w-full object-cover object-center opacity-45"
           loading="eager"
           fetchPriority="high"
@@ -65,16 +68,17 @@ export default function Hero() {
             </div>
 
             <h1 className="display mb-7 text-[2.75rem] text-white sm:text-6xl lg:text-[4.75rem]">
-              Reliable Scrap Car
+              Scrap Car Buyer
               <br className="hidden sm:block" />{' '}
               <span className="bg-gradient-to-r from-brand-red via-brand-accent to-brand-red bg-clip-text text-transparent">
-                &amp; Vehicle Services
+                &amp; Vehicle Scrapping Service
               </span>
             </h1>
 
             <p className="lede mb-10 max-w-xl text-lg font-light leading-relaxed text-brand-subtle md:text-xl">
-              Professional, dependable handling of old, damaged, unwanted and scrap vehicles — from free
-              collection to certified disposal, with paperwork taken care of end to end.
+              We buy old, damaged and end-of-life vehicles across Punjab, Delhi NCR, Uttarakhand and
+              Saharanpur — free scrap car pickup, a transparent price paid on handover, and RC cancellation
+              handled end to end.
             </p>
 
             {/* Primary actions — the number stays hidden, the tap still dials */}

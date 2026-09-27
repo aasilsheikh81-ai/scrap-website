@@ -1,9 +1,29 @@
 import { motion } from 'framer-motion';
-import { Car, Wrench, AlertTriangle, Recycle, ArrowUpRight, Cog, Truck } from 'lucide-react';
-import { business } from '../config/business';
+import { Link } from 'react-router-dom';
+import { FileCheck2, BadgeIndianRupee, Recycle, ArrowUpRight, Cog, Truck } from 'lucide-react';
+import { servicePages } from '../content/services';
+import { serviceImages } from '../config/images';
 
-const serviceIcons = [Car, Truck, AlertTriangle, Wrench, Recycle, Cog];
+const serviceIcons = [Truck, Recycle, Recycle, BadgeIndianRupee, FileCheck2, Cog];
 const easing = [0.16, 1, 0.3, 1] as const;
+
+// Each card links to its own service page; used auto parts has no page, so it points to contact.
+const services = [
+  ...servicePages.map((page) => ({
+    title: page.navLabel,
+    description: page.summary,
+    image: page.image,
+    href: `/${page.slug}`,
+    linkLabel: `Learn about ${page.navLabel.toLowerCase()}`
+  })),
+  {
+    title: 'Used Auto Parts',
+    description: 'Quality-inspected salvage parts — engines, gearboxes and body panels — recovered during vehicle dismantling.',
+    image: serviceImages.autoParts,
+    href: '/#contact',
+    linkLabel: 'Enquire about parts'
+  }
+];
 
 export default function Services() {
   return (
@@ -22,10 +42,10 @@ export default function Services() {
             transition={{ duration: 0.6, ease: easing }}
           >
             <span className="eyebrow mb-5">Our Expertise</span>
-            <h2 className="display mb-6 text-3xl md:text-5xl">Premium vehicle services</h2>
+            <h2 className="display mb-6 text-3xl md:text-5xl">Vehicle scrapping services</h2>
             <p className="lede max-w-xl text-lg font-light leading-relaxed text-brand-subtle">
-              From complete scrap disposal to salvaging reusable parts, every job runs through a process
-              designed to be efficient, environmentally sound and fully documented.
+              From free scrap car pickup to ELV scrapping, car recycling and RC cancellation — every job
+              runs through a process that is efficient, environmentally sound and fully documented.
             </p>
           </motion.div>
 
@@ -43,7 +63,7 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {business.services.map((service, index) => {
+          {services.map((service, index) => {
             const Icon = serviceIcons[index % serviceIcons.length];
             return (
               <motion.article
@@ -58,16 +78,18 @@ export default function Services() {
                 <span className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-brand-red/[0.09] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-charcoal">
-                  {service.image && (
-                    <img
-                      src={service.image.src}
-                      srcSet={`${service.image.thumbnail} 400w, ${service.image.src} 1000w`}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      alt={service.image.alt}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
-                    />
-                  )}
+                  <img
+                    src={service.image.src}
+                    srcSet={service.image.srcSet}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    width={service.image.width}
+                    height={service.image.height}
+                    alt={service.image.alt}
+                    title={service.image.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/25 to-transparent" />
 
                   <span className="absolute left-5 top-5 rounded-full border border-white/12 bg-brand-black/70 px-3 py-1 font-mono text-[10px] font-bold tracking-[0.15em] text-white/60 backdrop-blur-md">
@@ -86,13 +108,13 @@ export default function Services() {
                   <p className="mb-6 flex-1 text-sm font-light leading-relaxed text-brand-muted">
                     {service.description}
                   </p>
-                  <a
-                    href="#contact"
-                    className="inline-flex w-fit items-center gap-2 text-[11px] font-bold uppercase tracking-[0.15em] text-white/50 transition-colors duration-300 hover:text-brand-red focus:outline-none focus-visible:text-brand-red"
+                  <Link
+                    to={service.href}
+                    className="inline-flex w-fit items-center gap-2 text-[11px] font-bold uppercase tracking-[0.15em] text-white/60 transition-colors duration-300 hover:text-brand-red focus:outline-none focus-visible:text-brand-red after:absolute after:inset-0 after:z-40 after:content-['']"
                   >
-                    Enquire about this
+                    {service.linkLabel}
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
+                  </Link>
                 </div>
               </motion.article>
             );

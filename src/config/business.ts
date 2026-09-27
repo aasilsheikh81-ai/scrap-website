@@ -1,7 +1,11 @@
-import { serviceImages, galleryImages, heroImage, aboutImage, locationImage } from './images';
+import { galleryImages, heroImage, aboutImage, locationImage } from './images';
 
 export const business = {
-  name: "Elite Scrap Vehicles",
+  name: "AutoScrape Pro",
+  tagline: "Scrap Car Buyer & Vehicle Scrapping Service",
+
+  /** Canonical origin — no trailing slash. Every canonical, og:url and sitemap entry derives from it. */
+  siteUrl: "https://autoscrapepro.com",
 
   // Buttons never spell the number out — they say "Call Now" / "WhatsApp" and
   // rely on the `tel:` and `wa.me` targets built in src/utils/contact.ts.
@@ -29,53 +33,23 @@ export const business = {
   serviceAreas: [
     "Punjab",
     "NCR",
-    "Uttarakhand"
+    "Uttarakhand",
+    "Saharanpur"
   ],
 
   hours: "Mon - Sat: 9:00 AM - 7:00 PM",
+  openingHours: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "09:00", closes: "19:00" },
 
   heroImage,
   aboutImage,
   locationImage,
 
-  services: [
-    {
-      title: "Scrap Cars",
-      description: "We buy all types of scrap cars, regardless of their condition. Best prices paid instantly with free towing.",
-      image: serviceImages.scrapCars
-    },
-    {
-      title: "Old Vehicles",
-      description: "Got an old vehicle taking up space? We offer fast, free collection and legal paperwork for older models.",
-      image: serviceImages.oldVehicles
-    },
-    {
-      title: "Damaged Vehicles",
-      description: "Accident damaged, MOT failures, or non-runners. We accept vehicles with any level of mechanical or body damage.",
-      image: serviceImages.damagedVehicles
-    },
-    {
-      title: "Non-Running Vehicles",
-      description: "Seized engines, missing parts, or dead transmissions. We provide specialized recovery and fair salvage valuation.",
-      image: serviceImages.nonRunning
-    },
-    {
-      title: "Vehicle Scrap & Disposal",
-      description: "Certified eco-friendly depollution, hazardous fluid drainage, and responsible steel recycling following environmental norms.",
-      image: serviceImages.scrapDisposal
-    },
-    {
-      title: "Used Auto Parts",
-      description: "Quality inspected salvage OEM auto parts, tested engines, transmissions, and panels available for reuse.",
-      image: serviceImages.autoParts
-    }
-  ],
-  gallery: galleryImages.map(img => ({
-    ...img,
-    url: img.thumbnail // backward compatibility
-  })),
+  gallery: galleryImages,
+
+  // Only real profile URLs belong here — they feed schema `sameAs`.
   social: {
-    facebook: "#",
-    instagram: "#"
+    facebook: "",
+    instagram: "",
+    googleBusinessProfile: ""
   }
 };

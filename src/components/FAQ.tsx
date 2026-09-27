@@ -1,42 +1,10 @@
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Plus, MessageCircle } from 'lucide-react';
+import { homeFaqs as faqs } from '../content/faqs';
 import { whatsappHref, contactLabels, contactAria, externalLinkProps } from '../utils/contact';
 
 const easing = [0.16, 1, 0.3, 1] as const;
-
-const faqs = [
-  {
-    question: 'Which vehicles do you accept?',
-    answer:
-      'Cars, vans and other light vehicles in any condition — running, non-running, accident damaged, seized engines or missing parts. Age and make are not a barrier.'
-  },
-  {
-    question: 'Is collection really free?',
-    answer:
-      'Yes. Doorstep collection within our service areas is included, so the valuation you agree is not reduced by towing or recovery charges.'
-  },
-  {
-    question: 'What documents do I need?',
-    answer:
-      'Typically the registration certificate (RC) and the owner photo ID. If paperwork is missing or incomplete, tell us up front and we will explain the options available.'
-  },
-  {
-    question: 'How is my vehicle valued?',
-    answer:
-      'Valuation depends on the make, model, weight, condition and which parts remain usable. We explain how we reached the figure before anything is collected.'
-  },
-  {
-    question: 'What happens to the vehicle afterwards?',
-    answer:
-      'Vehicles are depolluted first — fluids, batteries and hazardous components are removed — then usable parts are salvaged and the remaining shell is recycled as scrap metal.'
-  },
-  {
-    question: 'Do you cover my area?',
-    answer:
-      'We operate across Punjab, NCR and Uttarakhand. Share your location when you call or message and we will confirm collection availability.'
-  }
-];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -57,9 +25,9 @@ export default function FAQ() {
             className="lg:sticky lg:top-32 lg:self-start"
           >
             <span className="eyebrow mb-5">Common Questions</span>
-            <h2 className="display mb-6 text-3xl md:text-5xl">Everything you need to know</h2>
+            <h2 className="display mb-6 text-3xl md:text-5xl">Scrap car questions, answered</h2>
             <p className="lede mb-9 text-lg font-light leading-relaxed text-brand-subtle">
-              Still unsure about something? Send us the details of your vehicle and we will answer directly.
+              Prices, documents, RC cancellation and pickup — the questions car owners ask us most. Still unsure? Send us your vehicle details and we will answer directly.
             </p>
 
             <a
@@ -106,22 +74,20 @@ export default function FAQ() {
                     </button>
                   </h3>
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        id={`faq-panel-${index}`}
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: easing }}
-                        className="overflow-hidden"
-                      >
-                        <p className="max-w-2xl pb-7 pr-12 text-[15px] font-light leading-relaxed text-brand-muted">
-                          {faq.answer}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* Answers stay in the DOM (collapsed to zero height) so crawlers and the
+                      FAQPage schema see the same text. */}
+                  <motion.div
+                    id={`faq-panel-${index}`}
+                    initial={false}
+                    animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                    transition={{ duration: 0.35, ease: easing }}
+                    aria-hidden={!isOpen}
+                    className="overflow-hidden"
+                  >
+                    <p className="max-w-2xl pb-7 pr-12 text-[15px] font-light leading-relaxed text-brand-muted">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
                 </motion.div>
               );
             })}

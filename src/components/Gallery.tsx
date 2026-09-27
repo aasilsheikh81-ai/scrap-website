@@ -80,9 +80,9 @@ export default function Gallery() {
           transition={{ duration: 0.6, ease: easing }}
         >
           <span className="eyebrow eyebrow--center mb-5">Facility &amp; Work Gallery</span>
-          <h2 className="display mb-6 text-3xl md:text-5xl">Our work in action</h2>
+          <h2 className="display mb-6 text-3xl md:text-5xl">Inside our scrap car yard</h2>
           <p className="lede mx-auto max-w-2xl text-lg font-light text-brand-muted">
-            A visual overview of our yard, vehicle storage and daily scrap vehicle operations.
+            End-of-life vehicles, vehicle dismantling and car recycling — a look at our yard and daily scrap vehicle operations.
           </p>
         </motion.div>
 
@@ -133,9 +133,15 @@ export default function Gallery() {
                 }`}
               >
                 <img
-                  src={image.thumbnail}
+                  src={image.src}
+                  srcSet={image.srcSet}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  width={image.width}
+                  height={image.height}
                   alt={image.alt}
+                  title={image.title}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-[800ms] ease-out group-hover:scale-110"
                 />
 

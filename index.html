@@ -1,146 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#08090A" />
+    <meta name="author" content="AutoScrape Pro" />
+    <meta name="geo.region" content="IN-UP" />
+    <meta name="geo.placename" content="Saharanpur" />
+    <meta name="geo.position" content="29.9678;77.5510" />
+    <meta name="ICBM" content="29.9678, 77.5510" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <title>Elite Scrap Vehicles | Scrap Car &amp; Vehicle Services in Punjab, NCR &amp; Uttarakhand</title>
-    <meta
-      name="description"
-      content="Elite Scrap Vehicles buys scrap cars, old, damaged and non-running vehicles across Punjab, NCR and Uttarakhand. Free collection, transparent valuation and RTO paperwork handled."
-    />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Elite Scrap Vehicles" />
-
-    <!-- Social preview -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Elite Scrap Vehicles" />
-    <meta property="og:title" content="Elite Scrap Vehicles | Scrap Car &amp; Vehicle Services" />
-    <meta
-      property="og:description"
-      content="Free collection, transparent valuation and paperwork handled for scrap, old and damaged vehicles across Punjab, NCR and Uttarakhand."
-    />
-    <meta property="og:image" content="/images/user-reference-scrap-yard.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Elite Scrap Vehicles | Scrap Car &amp; Vehicle Services" />
-    <meta
-      name="twitter:description"
-      content="Free collection, transparent valuation and paperwork handled for scrap, old and damaged vehicles."
-    />
-    <meta name="twitter:image" content="/images/user-reference-scrap-yard.jpg" />
-
-    <!-- Fonts -->
+    <!-- Fonts: loaded without blocking first paint -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      />
+    </noscript>
 
-    <!-- Hero image is the LCP element on every visit -->
-    <link rel="preload" as="image" href="/images/user-reference-scrap-yard.jpg" fetchpriority="high" />
-
-    <!-- LocalBusiness Schema -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "AutoWrecker",
-        "name": "Elite Scrap Vehicles",
-        "description": "Scrap car, old vehicle and damaged vehicle services with free collection across Punjab, NCR and Uttarakhand.",
-        "image": "/images/user-reference-scrap-yard.jpg",
-        "telephone": "+917668743334",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Ambala Road, Industrial Area",
-          "addressLocality": "Saharanpur",
-          "addressRegion": "Uttar Pradesh",
-          "postalCode": "247001",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "29.9678",
-          "longitude": "77.5510"
-        },
-        "hasMap": "https://maps.google.com/?q=Saharanpur%2C+Uttar+Pradesh%2C+India",
-        "areaServed": [
-          { "@type": "State", "name": "Punjab" },
-          { "@type": "Place", "name": "NCR" },
-          { "@type": "State", "name": "Uttarakhand" }
-        ],
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "09:00",
-          "closes": "19:00"
-        }
-      }
-    </script>
-
-    <!-- FAQ Schema — mirrors the on-page FAQ section -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Which vehicles do you accept?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Cars, vans and other light vehicles in any condition - running, non-running, accident damaged, seized engines or missing parts. Age and make are not a barrier."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is collection really free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Doorstep collection within our service areas is included, so the valuation you agree is not reduced by towing or recovery charges."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What documents do I need?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Typically the registration certificate (RC) and the owner photo ID. If paperwork is missing or incomplete, tell us up front and we will explain the options available."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is my vehicle valued?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Valuation depends on the make, model, weight, condition and which parts remain usable. We explain how we reached the figure before anything is collected."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What happens to the vehicle afterwards?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Vehicles are depolluted first - fluids, batteries and hazardous components are removed - then usable parts are salvaged and the remaining shell is recycled as scrap metal."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you cover my area?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We operate across Punjab, NCR and Uttarakhand. Share your location when you call or message and we will confirm collection availability."
-            }
-          }
-        ]
-      }
-    </script>
+    <!--
+      Per-route SEO tags (title, description, canonical, Open Graph, Twitter,
+      JSON-LD, LCP preload). scripts/prerender.mjs replaces this block for each
+      page at build time; src/seo/Seo.tsx swaps it on client-side navigation.
+    -->
+    <!--seo:start-->
+    <title>Scrap Car Buyer | Free Pickup &amp; RC Cancellation | AutoScrape Pro</title>
+    <meta
+      name="description"
+      content="Scrap car buyer in Punjab, NCR, Uttarakhand &amp; Saharanpur. Free pickup, transparent valuation and RC cancellation for old and damaged cars. Get a free quote now."
+    />
+    <!--seo:end-->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
