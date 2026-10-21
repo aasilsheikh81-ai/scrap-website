@@ -70,7 +70,10 @@ export default function LandingHero({ eyebrow, title, subtitle, image }: Landing
                 title={image.title}
                 loading="eager"
                 fetchPriority="high"
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover"
+                style={{
+                  objectPosition: image.src.includes('workshop-signboard') ? 'center 25%' : 'center'
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#101C32]/40 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 rounded-xl bg-white/95 p-2.5 backdrop-blur-xs border border-[#E5E7EB] shadow-xs">

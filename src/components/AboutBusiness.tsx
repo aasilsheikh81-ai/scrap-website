@@ -57,7 +57,8 @@ export default function AboutBusiness() {
                   title={photos.workshopSignboard.title}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[4/5] w-full object-cover object-top transition-transform duration-500 hover:scale-102"
+                  className="aspect-[4/5] w-full object-cover transition-transform duration-500 hover:scale-102"
+                  style={{ objectPosition: 'center 25%' }}
                 />
 
                 {/* Badge identifying the real location */}
@@ -90,7 +91,8 @@ export default function AboutBusiness() {
                   title={photos.workshopInterior.title}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[3/4] w-full object-cover object-center"
+                  className="aspect-[3/4] w-full object-cover"
+                  style={{ objectPosition: 'center 45%' }}
                 />
                 <div className="p-2 bg-white text-center">
                   <p className="text-[10px] font-bold text-[#101C32]">Salvage &amp; Parts Workshop</p>

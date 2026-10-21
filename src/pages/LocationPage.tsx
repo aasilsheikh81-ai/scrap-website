@@ -66,6 +66,13 @@ export default function LocationPage({ page }: { page: LocationPageData }) {
                 loading="lazy"
                 decoding="async"
                 className="aspect-[4/3] w-full object-cover"
+                style={{
+                  objectPosition: page.featuredImage.src.includes('workshop-interior')
+                    ? 'center 45%'
+                    : page.featuredImage.src.includes('workshop-signboard')
+                      ? 'center 25%'
+                      : 'center'
+                }}
               />
             </div>
           </div>

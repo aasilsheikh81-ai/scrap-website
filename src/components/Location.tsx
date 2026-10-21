@@ -57,7 +57,8 @@ export default function Location() {
                 title={photos.workshopSignboard.title}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[16/9] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                className="aspect-[16/9] sm:aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                style={{ objectPosition: 'center 25%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#101C32]/70 via-transparent to-transparent pointer-events-none" />
               <div className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-3 text-white">

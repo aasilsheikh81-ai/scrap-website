@@ -114,11 +114,12 @@ export default function Gallery() {
         {/* Responsive Gallery Grid */}
         <motion.div
           layout
-          className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start"
         >
           <AnimatePresence mode="popLayout">
             {visibleImages.map((image, index) => {
               const isFacilityPhoto = image.id.startsWith('workshop-');
+              const isPortrait = image.height > image.width;
               return (
                 <motion.button
                   key={image.id}
@@ -134,7 +135,11 @@ export default function Gallery() {
                     isFacilityPhoto ? 'sm:col-span-1 ring-1 ring-[#087A45]/20' : ''
                   }`}
                 >
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-gray-100">
+                  <div
+                    className={`relative w-full overflow-hidden bg-gray-100 ${
+                      isPortrait ? 'aspect-[3/4]' : 'aspect-[4/3]'
+                    }`}
+                  >
                     <img
                       src={image.src}
                       srcSet={image.srcSet}
@@ -145,9 +150,15 @@ export default function Gallery() {
                       title={image.title}
                       loading="lazy"
                       decoding="async"
-                      className={`h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
-                        isFacilityPhoto ? 'object-top' : 'object-center'
-                      }`}
+                      className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                      style={{
+                        objectPosition:
+                          image.id === 'workshop-signboard'
+                            ? 'center 25%'
+                            : image.id === 'workshop-interior'
+                              ? 'center 45%'
+                              : 'center'
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#101C32]/70 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-85" />
 
@@ -233,7 +244,7 @@ export default function Gallery() {
                   transition={{ duration: 0.2 }}
                   src={currentImage.src}
                   alt={currentImage.alt}
-                  className="max-h-[76vh] max-w-full rounded-xl object-contain shadow-2xl"
+                  className="max-h-[82vh] max-w-full rounded-xl object-contain shadow-2xl"
                   loading="eager"
                 />
               </AnimatePresence>
