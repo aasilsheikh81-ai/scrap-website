@@ -34,7 +34,7 @@ export const servicePages: ServicePageData[] = [
     summary: 'Free doorstep collection for running, non-running and accident-damaged vehicles — no towing charges.',
     image: photos.oldCars,
     intro: [
-      'An old car that no longer runs quickly becomes a problem: it takes up parking, collects challans and insurance reminders, and arranging a tow yourself costs money. AutoScrape Pro removes that hassle with free scrap car pickup across Punjab, Delhi NCR, Uttarakhand and Saharanpur.',
+      'An old car that no longer runs quickly becomes a problem: it takes up parking, collects challans and insurance reminders, and arranging a tow yourself costs money. AutoScrape Pro removes that hassle with free scrap car pickup across Dehradun, Uttarakhand, Punjab, Delhi NCR and Saharanpur.',
       'You agree the price first. We then send a recovery vehicle at a time that suits you, check the documents on the spot, pay you on handover and take the car away. Towing is never deducted from the quote you accepted.'
     ],
     sections: [

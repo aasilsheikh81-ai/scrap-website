@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, MessageCircle, ArrowRight, Recycle, Clock } from 'lucide-react';
+import { Phone, MapPin, MessageCircle, ArrowRight, Car, Recycle, Clock } from 'lucide-react';
 import { business } from '../config/business';
 import { servicePages } from '../content/services';
 import { locationPages } from '../content/locations';
@@ -17,49 +17,57 @@ const quickLinks = [
   { name: 'Home', href: '/#home' },
   { name: 'About', href: '/#about' },
   { name: 'Services', href: '/#services' },
-  { name: 'How It Works', href: '/#process' },
+  { name: 'Process', href: '/#process' },
   { name: 'Service Areas', href: '/#service-areas' },
   { name: 'Gallery', href: '/#gallery' },
-  { name: 'FAQ', href: '/#faq' },
-  { name: 'Location', href: '/#location' }
+  { name: 'Location', href: '/#location' },
+  { name: 'Contact', href: '/#contact' }
 ];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="hairline-top relative overflow-hidden border-t border-white/[0.06] bg-brand-black pb-10 pt-20">
-      <div className="pointer-events-none absolute inset-0 bg-grid" />
-
+    <footer className="relative overflow-hidden bg-[#101C32] text-white pt-16 pb-12 border-t border-[#1C2C4A]">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
-        <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12">
-          {/* Brand */}
+        <div className="mb-14 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12">
+          {/* Brand Column */}
           <div className="lg:col-span-5">
-            <Link to="/" className="group mb-6 inline-flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-brand-red to-brand-darkred text-white transition-transform duration-500 group-hover:rotate-[-8deg]">
-                <Recycle className="h-5 w-5" />
+            <Link to="/" className="group mb-5 inline-flex items-center gap-2.5">
+              <span className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-[#EAF8EF] text-[#087A45] border border-[#087A45]/30">
+                <Car className="w-5 h-5 text-[#FF8717]" />
+                <Recycle className="w-3.5 h-3.5 absolute -bottom-1 -right-1 text-[#087A45] bg-white rounded-full p-0.5" />
               </span>
-              <span className="text-2xl font-extrabold tracking-tight text-white">
-                {business.name}
-                <span className="text-brand-accent">.</span>
+              <span className="flex flex-col leading-tight">
+                <span className="text-2xl font-extrabold tracking-tight text-white">
+                  {business.name}
+                  <span className="text-[#FF8717]">.</span>
+                </span>
+                <span className="text-[9px] font-bold uppercase tracking-[0.24em] text-gray-400">
+                  Scrap &amp; Salvage Experts
+                </span>
               </span>
             </Link>
 
-            <p className="mb-8 max-w-md font-light leading-relaxed text-brand-muted">
+            <p className="mb-6 max-w-md text-sm text-gray-300 leading-relaxed">
               Scrap car buyer and vehicle scrapping service for old, damaged and end-of-life vehicles. Free
               pickup, fair valuations and RC cancellation support across {business.serviceAreas.join(', ')}.
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <a href={telHref} aria-label={contactAria.call} className="btn btn-primary !py-3 !px-6 text-sm">
-                <Phone className="h-4 w-4" />
+              <a
+                href={telHref}
+                aria-label={contactAria.call}
+                className="btn btn-orange !py-2.5 !px-5 text-sm rounded-xl font-bold flex items-center gap-2"
+              >
+                <Phone className="h-4 w-4 fill-white" />
                 <span>{contactLabels.call}</span>
               </a>
               <a
                 href={whatsappHref}
                 {...externalLinkProps}
                 aria-label={contactAria.whatsapp}
-                className="btn btn-whatsapp !py-3 !px-6 text-sm"
+                className="btn btn-primary !py-2.5 !px-5 text-sm rounded-xl font-bold flex items-center gap-2"
               >
                 <MessageCircle className="h-4 w-4" />
                 <span>{contactLabels.whatsapp}</span>
@@ -67,17 +75,19 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links */}
+          {/* Quick Links Column */}
           <div className="lg:col-span-3">
-            <h2 className="mb-6 text-[11px] font-bold uppercase tracking-[0.18em] text-white">Quick Links</h2>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-3.5 lg:grid-cols-1">
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-wider text-[#FF8717]">
+              Navigation
+            </h2>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 lg:grid-cols-1">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="group flex items-center gap-2 text-sm font-light text-brand-muted transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                    className="group inline-flex items-center gap-1.5 text-sm text-gray-300 transition-colors hover:text-white"
                   >
-                    <ArrowRight className="h-3 w-3 shrink-0 -translate-x-1 text-brand-red opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                    <ArrowRight className="h-3 w-3 text-[#087A45] transition-transform group-hover:translate-x-1" />
                     <span>{link.name}</span>
                   </a>
                 </li>
@@ -85,64 +95,61 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Details Column */}
           <div className="lg:col-span-4">
-            <h2 className="mb-6 text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+            <h2 className="mb-5 text-xs font-bold uppercase tracking-wider text-[#FF8717]">
               Contact Details
             </h2>
-            <ul className="space-y-5 text-brand-muted">
-              <li className="flex items-start gap-3.5">
-                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-red" />
+            <ul className="space-y-4 text-sm text-gray-300">
+              <li className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#FF8717]" />
                 <div>
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/40">Yard</p>
-                  <address className="text-sm font-light not-italic leading-relaxed">
-                    {business.address.line1}, {business.address.city}, {business.address.state}{' '}
-                    {business.address.pinCode}, {business.address.country}
-                  </address>
+                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400">Workshop Address</p>
+                  <p className="font-medium text-white">Banshiwala Jaajra, Dehradun, Uttarakhand</p>
                   <a
                     href={directionsHref}
                     {...externalLinkProps}
                     aria-label={contactAria.directions}
-                    className="mt-2 inline-block text-xs font-bold uppercase tracking-[0.14em] text-brand-red transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                    className="mt-1 inline-block text-xs font-bold text-[#087A45] hover:underline"
                   >
                     {contactLabels.directions} →
                   </a>
                 </div>
               </li>
 
-              <li className="flex items-start gap-3.5">
-                <Phone className="mt-0.5 h-5 w-5 shrink-0 text-brand-red" />
+              <li className="flex items-start gap-3">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[#087A45]" />
                 <div>
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/40">Phone</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400">Call Us</p>
                   <a
                     href={telHref}
                     aria-label={contactAria.call}
-                    className="text-[15px] font-semibold tracking-wide text-white transition-colors hover:text-brand-red focus:outline-none focus-visible:text-brand-red"
+                    className="font-bold text-white hover:text-[#FF8717] transition-colors"
                   >
                     {phoneDisplay}
                   </a>
                 </div>
               </li>
 
-              <li className="flex items-start gap-3.5">
-                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
+              <li className="flex items-start gap-3">
+                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-[#FF8717]" />
                 <div>
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/40">Hours</p>
-                  <p className="text-sm font-light">{business.hours}</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400">Business Hours</p>
+                  <p className="font-medium text-white">{business.hours}</p>
                 </div>
               </li>
 
-              <li className="flex items-start gap-3.5">
-                <MessageCircle className="mt-0.5 h-5 w-5 shrink-0 text-brand-whatsapp" />
+              <li className="flex items-start gap-3">
+                <MessageCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#25D366]" />
                 <div>
-                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/40">Chat</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-gray-400">WhatsApp</p>
                   <a
                     href={whatsappHref}
                     {...externalLinkProps}
                     aria-label={contactAria.whatsapp}
-                    className="text-sm font-light transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                    className="font-medium text-gray-300 hover:text-white"
                   >
-                    WhatsApp available during opening hours
+                    Chat online for quick scrap quotes
                   </a>
                 </div>
               </li>
@@ -150,16 +157,18 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Sitewide internal links to every landing page */}
-        <div className="mb-14 grid grid-cols-1 gap-10 border-t border-white/[0.06] pt-12 md:grid-cols-2">
+        {/* Internal Links for SEO */}
+        <div className="mb-10 grid grid-cols-1 gap-8 border-t border-white/10 pt-10 md:grid-cols-2">
           <nav aria-label="Services">
-            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-white">Scrap Car Services</h2>
-            <ul className="grid gap-3 sm:grid-cols-2">
+            <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-[#FF8717]">
+              Scrap Car Services
+            </h2>
+            <ul className="grid gap-2 sm:grid-cols-2">
               {servicePages.map((page) => (
                 <li key={page.slug}>
                   <Link
                     to={`/${page.slug}`}
-                    className="text-sm font-light text-brand-muted transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                    className="text-xs text-gray-400 hover:text-white transition-colors"
                   >
                     {page.navLabel}
                   </Link>
@@ -168,13 +177,15 @@ export default function Footer() {
             </ul>
           </nav>
           <nav aria-label="Service areas">
-            <h2 className="mb-5 text-[11px] font-bold uppercase tracking-[0.18em] text-white">Service Areas</h2>
-            <ul className="grid gap-3 sm:grid-cols-2">
+            <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-[#FF8717]">
+              Service Areas
+            </h2>
+            <ul className="grid gap-2 sm:grid-cols-2">
               {locationPages.map((page) => (
                 <li key={page.slug}>
                   <Link
                     to={`/${page.slug}`}
-                    className="text-sm font-light text-brand-muted transition-colors hover:text-white focus:outline-none focus-visible:text-white"
+                    className="text-xs text-gray-400 hover:text-white transition-colors"
                   >
                     {page.h1}
                   </Link>
@@ -184,18 +195,14 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 text-sm font-light text-brand-muted md:flex-row">
+        {/* Bottom Bar */}
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-gray-400 md:flex-row">
           <p>
             © {currentYear} {business.name}. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-white">
-              Privacy Policy
-            </a>
-            <a href="#" className="transition-colors hover:text-white">
-              Terms of Service
-            </a>
-          </div>
+          <p>
+            Banshiwala Jaajra, Dehradun, Uttarakhand
+          </p>
         </div>
       </div>
     </footer>

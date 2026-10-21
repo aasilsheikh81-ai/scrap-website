@@ -22,9 +22,9 @@ import FAQ from '../components/FAQ';
 import Location from '../components/Location';
 import Contact from '../components/Contact';
 
-const title = 'Scrap Car Buyer | Free Pickup & RC Cancellation | AutoScrape Pro';
+const title = 'Scrap Car Buyer in Dehradun | AutoScrape Pro';
 const description =
-  'Scrap car buyer in Punjab, NCR, Uttarakhand & Saharanpur. Free pickup, transparent valuation and RC cancellation for old and damaged cars. Get a free quote now.';
+  'Scrap car buyer in Dehradun & Uttarakhand. Free doorstep pickup, fair valuation and RC cancellation for old, accidental & ELV cars across Doon. Call today.';
 
 export default function HomePage() {
   const { pathname, hash } = useLocation();

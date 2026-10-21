@@ -23,7 +23,7 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
   ];
 
   return (
-    <main className="bg-brand-offwhite text-brand-black">
+    <main className="bg-white text-[#667085]">
       <Seo
         title={page.metaTitle}
         description={page.metaDescription}
@@ -42,10 +42,10 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
       <Breadcrumbs trail={trail} />
       <LandingHero eyebrow={page.eyebrow} title={page.h1} subtitle={page.heroSubtitle} image={page.image} />
 
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white py-14 md:py-18">
         <div className="container mx-auto max-w-5xl px-4 md:px-6">
           {page.intro.map((paragraph) => (
-            <p key={paragraph.slice(0, 40)} className="mb-5 max-w-3xl text-base font-light leading-relaxed text-brand-muted md:text-lg">
+            <p key={paragraph.slice(0, 40)} className="mb-4 max-w-3xl text-base leading-relaxed text-[#667085] md:text-lg">
               {paragraph}
             </p>
           ))}
@@ -54,10 +54,10 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
 
       <ContentSections sections={page.sections} />
 
-      <section className="border-t border-gray-100 bg-white py-16 md:py-24">
+      <section className="border-t border-[#E5E7EB] bg-white py-16 md:py-20">
         <div className="container mx-auto max-w-3xl px-4 md:px-6">
-          <h2 className="mb-10 text-center text-2xl font-extrabold tracking-tight md:text-4xl">
-            {page.navLabel}: frequently asked questions
+          <h2 className="mb-8 text-center text-2xl sm:text-3xl font-extrabold tracking-tight text-[#101C32]">
+            {page.navLabel}: Frequently Asked Questions
           </h2>
           <FaqList faqs={page.faqs} idPrefix={page.slug} />
         </div>

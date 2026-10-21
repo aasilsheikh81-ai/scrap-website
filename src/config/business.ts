@@ -5,7 +5,7 @@ export const business = {
   tagline: "Scrap Car Buyer & Vehicle Scrapping Service",
 
   /** Canonical origin — no trailing slash. Every canonical, og:url and sitemap entry derives from it. */
-  siteUrl: "https://autoscrapepro.com",
+  siteUrl: "https://www.autoscrapepro.com",
 
   // Buttons never spell the number out — they say "Call Now" / "WhatsApp" and
   // rely on the `tel:` and `wa.me` targets built in src/utils/contact.ts.
@@ -16,24 +16,26 @@ export const business = {
   whatsapp: "917668743334",
 
   address: {
-    line1: "Ambala Road, Industrial Area",
-    city: "Saharanpur",
-    state: "Uttar Pradesh",
-    pinCode: "247001",
-    country: "India"
+    line1: "Banshiwala Jaajra",
+    city: "Dehradun",
+    state: "Uttarakhand",
+    pinCode: "248015",
+    country: "India",
+    formatted: "Banshiwala Jaajra, Dehradun, Uttarakhand"
   },
 
   location: {
-    mapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.6118949826!2d77.47895116796307!3d29.96781912959823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ee501309f7a63%3A0xb304917a80b91e92!2sSaharanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin",
-    latitude: "29.9678",
-    longitude: "77.5510",
-    directionsUrl: "https://maps.google.com/?q=Saharanpur%2C+Uttar+Pradesh%2C+India"
+    mapsUrl: "https://maps.google.com/maps?q=Banshiwala+Jaajra%2C+Dehradun%2C+Uttarakhand&t=&z=14&ie=UTF8&iwloc=&output=embed",
+    latitude: "30.3420",
+    longitude: "77.9470",
+    directionsUrl: "https://maps.google.com/?q=Banshiwala+Jaajra%2C+Dehradun%2C+Uttarakhand"
   },
 
   serviceAreas: [
+    "Dehradun",
+    "Uttarakhand",
     "Punjab",
     "NCR",
-    "Uttarakhand",
     "Saharanpur"
   ],
 

@@ -27,23 +27,21 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="hairline-top relative overflow-hidden bg-brand-charcoal py-24 text-white md:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-black via-brand-charcoal to-brand-charcoal" />
-      <div className="pointer-events-none absolute inset-0 bg-grid" />
-      <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-brand-red/[0.07] blur-[130px]" />
-
+    <section id="services" className="relative overflow-hidden bg-[#EAF8EF]/60 py-20 md:py-28 border-y border-[#E5E7EB]">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
-        <div className="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+        <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <motion.div
             className="max-w-2xl"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
+            viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, ease: easing }}
           >
-            <span className="eyebrow mb-5">Our Expertise</span>
-            <h2 className="display mb-6 text-3xl md:text-5xl">Vehicle scrapping services</h2>
-            <p className="lede max-w-xl text-lg font-light leading-relaxed text-brand-subtle">
+            <span className="eyebrow mb-4">Our Expertise</span>
+            <h2 className="display mb-4 text-3xl md:text-4xl lg:text-[42px]">
+              Vehicle Scrapping Services
+            </h2>
+            <p className="lede max-w-xl text-base sm:text-lg leading-relaxed text-[#667085]">
               From free scrap car pickup to ELV scrapping, car recycling and RC cancellation — every job
               runs through a process that is efficient, environmentally sound and fully documented.
             </p>
@@ -53,12 +51,12 @@ export default function Services() {
             href="#contact"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.6, delay: 0.15, ease: easing }}
-            className="group hidden shrink-0 items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-brand-red hover:bg-brand-red md:flex"
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6, delay: 0.1, ease: easing }}
+            className="btn btn-primary hidden md:inline-flex !py-3 !px-6 rounded-xl text-sm font-bold shadow-sm"
           >
-            Request a Quote
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <span>Request a Quote</span>
+            <ArrowUpRight className="h-4 w-4" />
           </motion.a>
         </div>
 
@@ -68,16 +66,13 @@ export default function Services() {
             return (
               <motion.article
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.07, ease: easing }}
-                className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/[0.07] bg-brand-surface/70 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-brand-red/40 hover:shadow-[0_32px_64px_-32px_rgba(0,0,0,0.9)]"
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: index * 0.06, ease: easing }}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-[#087A45]/30"
               >
-                {/* Red wash that fades in on hover */}
-                <span className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-brand-red/[0.09] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-brand-charcoal">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-gray-100">
                   <img
                     src={service.image.src}
                     srcSet={service.image.srcSet}
@@ -88,32 +83,34 @@ export default function Services() {
                     title={service.image.title}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/25 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                  <span className="absolute left-5 top-5 rounded-full border border-white/12 bg-brand-black/70 px-3 py-1 font-mono text-[10px] font-bold tracking-[0.15em] text-white/60 backdrop-blur-md">
+                  {/* Index badge */}
+                  <span className="absolute left-4 top-4 rounded-lg bg-white/90 px-2.5 py-1 font-mono text-[11px] font-bold tracking-wider text-[#101C32] backdrop-blur-xs shadow-xs">
                     {String(index + 1).padStart(2, '0')}
                   </span>
 
-                  <span className="absolute right-5 top-5 grid h-12 w-12 place-items-center rounded-2xl border border-white/10 bg-brand-black/75 text-brand-red shadow-lg backdrop-blur-md transition-all duration-500 group-hover:bg-brand-red group-hover:text-white group-hover:rotate-[-6deg]">
+                  {/* Icon badge */}
+                  <span className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-xl bg-white text-[#087A45] shadow-sm transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-5 w-5" />
                   </span>
                 </div>
 
-                <div className="relative z-30 flex flex-1 flex-col p-7">
-                  <h3 className="mb-3 text-xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-brand-red">
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="mb-2.5 text-lg font-bold tracking-tight text-[#101C32] transition-colors duration-200 group-hover:text-[#087A45]">
                     {service.title}
                   </h3>
-                  <p className="mb-6 flex-1 text-sm font-light leading-relaxed text-brand-muted">
+                  <p className="mb-6 flex-1 text-sm leading-relaxed text-[#667085]">
                     {service.description}
                   </p>
                   <Link
                     to={service.href}
-                    className="inline-flex w-fit items-center gap-2 text-[11px] font-bold uppercase tracking-[0.15em] text-white/60 transition-colors duration-300 hover:text-brand-red focus:outline-none focus-visible:text-brand-red after:absolute after:inset-0 after:z-40 after:content-['']"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#087A45] transition-colors hover:text-[#075D37] after:absolute after:inset-0 after:content-['']"
                   >
-                    {service.linkLabel}
-                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <span>{service.linkLabel}</span>
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                 </div>
               </motion.article>

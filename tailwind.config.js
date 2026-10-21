@@ -11,13 +11,27 @@ export default {
       },
       colors: {
         brand: {
-          black: '#0A0A0A',
-          charcoal: '#171717',
-          offwhite: '#FAFAFA',
-          red: '#DC2626',
-          darkred: '#991B1B',
-          accent: '#EA580C', // Amber/Orange accent
-          muted: '#737373', // Muted text
+          green: '#087A45', // Primary brand color: Forest green
+          darkgreen: '#075D37', // Dark green accent
+          lightgreen: '#EAF8EF', // Light green sections
+          orange: '#FF8717', // Secondary accent: Orange
+          lightorange: '#FFF3E5', // Light orange highlights
+          navy: '#101C32', // Main headings: Deep navy
+          slate: '#667085', // Body text: Slate gray
+          border: '#E5E7EB', // Borders and dividers
+          offwhite: '#F9FAFB',
+          white: '#FFFFFF',
+          whatsapp: '#25D366',
+
+          // Compatibility aliases
+          black: '#101C32',
+          charcoal: '#17243B',
+          surface: '#F8FAFC',
+          muted: '#667085',
+          subtle: '#475467',
+          red: '#087A45',
+          darkred: '#075D37',
+          accent: '#FF8717',
         }
       }
     },

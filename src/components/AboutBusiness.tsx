@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Target, Users, Check, Phone } from 'lucide-react';
+import { ShieldCheck, Target, Users, Check, Phone, MapPin } from 'lucide-react';
 import { business } from '../config/business';
+import { photos } from '../config/images';
 import { telHref, contactLabels, contactAria } from '../utils/contact';
 
 const easing = [0.16, 1, 0.3, 1] as const;
@@ -32,115 +33,135 @@ const commitments = [
 
 export default function AboutBusiness() {
   return (
-    <section id="about" className="relative overflow-hidden bg-brand-offwhite py-24 md:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-grid-light" />
-      <div className="pointer-events-none absolute -right-32 top-24 h-[420px] w-[420px] rounded-full bg-brand-red/[0.06] blur-[120px]" />
-
+    <section id="about" className="relative overflow-hidden bg-white py-20 md:py-28">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center gap-14 lg:flex-row lg:items-stretch lg:gap-20">
-          {/* Imagery */}
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
+          {/* Imagery: Authentic AutoScrape Pro Workshop Photos */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.8, ease: easing }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7, ease: easing }}
             className="w-full lg:w-1/2"
           >
-            <div className="relative">
-              {/* Offset frame behind the photo adds depth */}
-              <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] border border-brand-red/20 md:-left-6 md:-top-6" />
-
-              <div className="group relative overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-40px_rgba(8,9,10,0.5)]">
+            <div className="relative mx-auto max-w-lg">
+              {/* Main Photo 1: Business Signboard & Workshop Entrance */}
+              <div className="relative overflow-hidden rounded-3xl border border-[#E5E7EB] bg-[#F9FAFB] shadow-xl">
                 <img
-                  src={business.aboutImage.src}
-                  srcSet={business.aboutImage.srcSet}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  width={business.aboutImage.width}
-                  height={business.aboutImage.height}
-                  alt={business.aboutImage.alt}
-                  title={business.aboutImage.title}
+                  src={photos.workshopSignboard.src}
+                  srcSet={photos.workshopSignboard.srcSet}
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  width={photos.workshopSignboard.width}
+                  height={photos.workshopSignboard.height}
+                  alt={photos.workshopSignboard.alt}
+                  title={photos.workshopSignboard.title}
                   loading="lazy"
                   decoding="async"
-                  className="aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
+                  className="aspect-[4/5] w-full object-cover object-top transition-transform duration-500 hover:scale-102"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-black/60 via-transparent to-transparent" />
 
-                <div className="absolute bottom-5 left-5 flex items-center gap-3 rounded-full border border-white/15 bg-brand-black/70 px-4 py-2 backdrop-blur-md">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                    {business.address.city} Facility
+                {/* Badge identifying the real location */}
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-white/95 p-3 shadow-md backdrop-blur-md border border-[#E5E7EB]">
+                  <div className="flex items-center gap-2.5">
+                    <span className="grid h-8 w-8 place-items-center rounded-xl bg-[#EAF8EF] text-[#087A45]">
+                      <MapPin className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <p className="text-xs font-bold text-[#101C32]">AutoScrape Pro Workshop</p>
+                      <p className="text-[11px] text-[#667085]">Banshiwala Jaajra, Dehradun</p>
+                    </div>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EAF8EF] px-2.5 py-1 text-[10px] font-bold text-[#087A45]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#087A45] animate-pulse" />
+                    Verified Facility
                   </span>
                 </div>
               </div>
 
-              {/* Experience badge */}
-              <div className="absolute -bottom-6 right-4 flex items-center gap-4 rounded-2xl border-l-4 border-brand-red bg-white px-7 py-5 shadow-[0_24px_48px_-24px_rgba(8,9,10,0.45)] md:-right-6">
-                <span className="text-4xl font-extrabold tracking-tight text-brand-red">10+</span>
-                <span className="text-[11px] font-bold uppercase leading-tight tracking-[0.15em] text-brand-charcoal">
-                  Years
-                  <br />
-                  Experience
-                </span>
+              {/* Inset Photo 2: Workshop Interior */}
+              <div className="absolute -bottom-8 -right-4 hidden sm:block w-48 rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-white">
+                <img
+                  src={photos.workshopInterior.src}
+                  srcSet={photos.workshopInterior.srcSet}
+                  sizes="200px"
+                  width={photos.workshopInterior.width}
+                  height={photos.workshopInterior.height}
+                  alt={photos.workshopInterior.alt}
+                  title={photos.workshopInterior.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[3/4] w-full object-cover object-center"
+                />
+                <div className="p-2 bg-white text-center">
+                  <p className="text-[10px] font-bold text-[#101C32]">Salvage &amp; Parts Workshop</p>
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Copy */}
+          {/* Copy Column */}
           <div className="w-full lg:w-1/2">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.6, ease: easing }}
             >
-              <span className="eyebrow mb-5">About Our Business</span>
-              <h2 className="display mb-7 text-3xl text-brand-black md:text-5xl">
+              <span className="eyebrow mb-4">About Our Business</span>
+              <h2 className="display mb-5 text-3xl md:text-4xl lg:text-[42px]">
                 A scrap car buyer you can trust, based in {business.address.city}
               </h2>
 
-              <p className="lede mb-5 text-lg font-light leading-relaxed text-brand-muted">
-                {business.name} buys scrap, old, damaged and end-of-life vehicles (ELVs) across Punjab, Delhi
+              <p className="lede mb-4 text-base sm:text-lg leading-relaxed text-[#667085]">
+                {business.name} buys scrap, old, damaged and end-of-life vehicles across Punjab, Delhi
                 NCR, Uttarakhand and {business.address.city}. We make old car disposal simple: a clear price,
                 free doorstep collection, payment on handover and RC cancellation guided with the RTO.
               </p>
-              <p className="mb-8 text-[15px] font-light leading-relaxed text-brand-muted">
+              <p className="mb-6 text-sm sm:text-base leading-relaxed text-[#667085]">
                 Every vehicle is depolluted before dismantling, usable parts are salvaged, and the remaining
                 metal goes for car recycling — responsible vehicle scrapping in line with India’s Vehicle
                 Scrapping Policy, so your car is legally off your name and out of the environment.
               </p>
 
-              <ul className="mb-10 grid gap-3.5">
+              <ul className="mb-8 grid gap-3">
                 {commitments.map((commitment) => (
                   <li key={commitment} className="flex items-start gap-3">
-                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-red/10 text-brand-red">
-                      <Check className="h-3 w-3" strokeWidth={3} />
+                    <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-[#EAF8EF] text-[#087A45]">
+                      <Check className="h-3.5 w-3.5" strokeWidth={3} />
                     </span>
-                    <span className="text-[15px] leading-relaxed text-brand-charcoal">{commitment}</span>
+                    <span className="text-sm sm:text-[15px] font-medium text-[#101C32]">{commitment}</span>
                   </li>
                 ))}
               </ul>
 
-              <a href={telHref} aria-label={contactAria.call} className="btn btn-outline-dark mb-12 text-sm">
-                <Phone className="h-4 w-4" />
-                <span>{contactLabels.callLong}</span>
-              </a>
+              <div className="mb-10">
+                <a
+                  href={telHref}
+                  aria-label={contactAria.call}
+                  className="btn btn-primary text-sm !py-3 !px-6 rounded-xl font-bold inline-flex items-center gap-2"
+                >
+                  <Phone className="h-4 w-4 fill-white" />
+                  <span>{contactLabels.callLong}</span>
+                </a>
+              </div>
             </motion.div>
 
+            {/* 3 Highlight Cards */}
             <div className="grid gap-4 sm:grid-cols-3">
               {highlights.map(({ icon: Icon, title, description }, index) => (
                 <motion.div
                   key={title}
-                  initial={{ opacity: 0, y: 24 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
+                  viewport={{ once: true, margin: '-40px' }}
                   transition={{ duration: 0.5, delay: index * 0.1, ease: easing }}
-                  className="group surface-light rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1.5 hover:border-brand-red/25 hover:shadow-[0_24px_48px_-24px_rgba(225,29,46,0.3)]"
+                  className="rounded-2xl border border-[#E5E7EB] bg-[#F9FAFB] p-5 transition-all duration-300 hover:border-[#087A45]/30 hover:bg-[#EAF8EF]/40 hover:shadow-sm"
                 >
-                  <span className="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-brand-red/10 text-brand-red transition-colors duration-300 group-hover:bg-brand-red group-hover:text-white">
+                  <span className="mb-4 grid h-10 w-10 place-items-center rounded-xl bg-white text-[#087A45] shadow-xs border border-[#E5E7EB]">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h3 className="mb-2 text-base font-bold tracking-tight text-brand-black">{title}</h3>
-                  <p className="text-sm leading-relaxed text-brand-muted">{description}</p>
+                  <h3 className="mb-1.5 text-sm font-bold text-[#101C32]">{title}</h3>
+                  <p className="text-xs leading-relaxed text-[#667085]">{description}</p>
                 </motion.div>
               ))}
             </div>

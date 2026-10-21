@@ -44,6 +44,20 @@ function photo(
 }
 
 export const photos = {
+  workshopSignboard: photo(
+    'autoscrape-pro-workshop-signboard-dehradun',
+    460,
+    1024,
+    'AutoScrape Pro vehicle scrapping workshop and business signboard in Banshiwala Jaajra, Dehradun, Uttarakhand.',
+    'AutoScrape Pro workshop entrance & signboard'
+  ),
+  workshopInterior: photo(
+    'autoscrape-pro-workshop-interior-dehradun',
+    460,
+    1024,
+    'Inside view of the AutoScrape Pro workshop with salvaged vehicle parts and automotive components.',
+    'AutoScrape Pro workshop interior & salvage parts'
+  ),
   endOfLifeSedan: photo(
     'scrap-car-yard-end-of-life-sedan',
     1920,
@@ -125,9 +139,10 @@ export const ogImage = {
   alt: 'AutoScrape Pro — scrap car buyer with free vehicle pickup'
 };
 
-export const heroImage = photos.endOfLifeSedan;
-export const aboutImage = photos.stackedCars;
-export const locationImage = photos.scrapYard;
+export const heroImage = photos.damagedCar;
+export const aboutImage = photos.workshopSignboard;
+export const aboutInteriorImage = photos.workshopInterior;
+export const locationImage = photos.workshopSignboard;
 export const contactBackground = photos.crushedCars;
 
 export const serviceImages = {
@@ -140,14 +155,22 @@ export const serviceImages = {
 };
 
 export const galleryImages: GalleryImage[] = [
-  { id: 'yard-overview', ...photos.scrapYard, category: 'Yard Overview', span: 'md:col-span-2 md:row-span-2' },
-  { id: 'rusted-sedan', ...photos.endOfLifeSedan, category: 'Scrap Vehicles' },
+  {
+    id: 'workshop-signboard',
+    ...photos.workshopSignboard,
+    category: 'Facility & Workshop'
+  },
+  {
+    id: 'workshop-interior',
+    ...photos.workshopInterior,
+    category: 'Facility & Workshop'
+  },
   { id: 'damaged-car', ...photos.damagedCar, category: 'Damaged Vehicles' },
-  { id: 'stacked-cars', ...photos.stackedCars, category: 'Processing' },
+  { id: 'yard-overview', ...photos.scrapYard, category: 'Yard Overview' },
+  { id: 'rusted-sedan', ...photos.endOfLifeSedan, category: 'Scrap Vehicles' },
   { id: 'scrap-parts', ...photos.bodyParts, category: 'Parts & Components' },
-  { id: 'abandoned-van', ...photos.oldVan, category: 'Scrap Vehicles', span: 'md:col-span-2' },
+  { id: 'stacked-cars', ...photos.stackedCars, category: 'Processing' },
   { id: 'engine-components', ...photos.engineParts, category: 'Parts & Components' },
   { id: 'scrap-tires', ...photos.tyresParts, category: 'Parts & Components' },
-  { id: 'weathered-cars', ...photos.oldCars, category: 'Scrap Vehicles' },
-  { id: 'crushed-cars', ...photos.crushedCars, category: 'Processing' }
+  { id: 'weathered-cars', ...photos.oldCars, category: 'Scrap Vehicles' }
 ];

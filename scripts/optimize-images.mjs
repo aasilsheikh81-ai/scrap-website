@@ -26,8 +26,8 @@ for (const file of await readdir(SRC)) {
   const { width } = await sharp(input).metadata();
 
   for (const w of WIDTHS) {
-    if (w > width) continue;
-    await sharp(input).resize({ width: w }).webp({ quality: 72 }).toFile(path.join(OUT, `${name}-${w}.webp`));
+    const targetWidth = Math.min(w, width);
+    await sharp(input).resize({ width: targetWidth }).webp({ quality: 80 }).toFile(path.join(OUT, `${name}-${w}.webp`));
   }
   await sharp(input)
     .resize({ width: Math.min(1600, width) })

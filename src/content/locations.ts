@@ -24,6 +24,174 @@ export interface LocationPageData {
 }
 
 export const locationPages: LocationPageData[] = [
+  // ──────────────────────────────── Dehradun ────────────────────────────────
+  {
+    slug: 'scrap-car-buyer-dehradun',
+    legacySlug: 'dehradun',
+    name: 'Dehradun',
+    area: { '@type': 'City', name: 'Dehradun' },
+    metaTitle: 'Scrap Car Buyer in Dehradun | Vehicle Scrapping Services',
+    metaDescription:
+      'Looking for a scrap car buyer in Dehradun? AutoScrape Pro offers free pickup, instant fair valuation and RC cancellation across Doon Valley. Call us today.',
+    eyebrow: 'Dehradun Vehicle Scrapping Service',
+    h1: 'Scrap Car Buyer in Dehradun',
+    heroSubtitle:
+      'Free doorstep pickup, instant valuation and end-to-end RC cancellation for old, accidental and end-of-life cars across Dehradun and the Doon Valley.',
+    cardSummary:
+      'Free scrap car pickup across Banshiwala Jaajra, Rajpur Road, Jakhan, Clement Town, Prem Nagar and all Doon Valley.',
+    heroImage: photos.workshopSignboard,
+    featuredImage: photos.workshopInterior,
+    intro: {
+      heading: 'Sell your scrap car in Dehradun with free doorstep pickup & RC cancellation',
+      paragraphs: [
+        'Dehradun’s growing traffic, steep valley routes, and heavy monsoon humidity take a harsh toll on older passenger vehicles. Whether your car has crossed its registration validity, failed its fitness renewal, suffered accidental damage, or has been sitting idle in your garage or society parking, AutoScrape Pro makes car scrapping completely straightforward.',
+        'With our primary workshop facility located at Banshiwala Jaajra, Dehradun, we provide immediate doorstep collection across the entire Doon Valley. You receive a transparent quote based on vehicle weight and salvageable parts, upfront payment on vehicle handover, and guided RC deregistration with the Dehradun RTO (UK-07) to ensure you are fully protected from future legal liabilities.'
+      ]
+    },
+    sections: [
+      {
+        heading: 'Vehicle scrapping services we provide in Dehradun',
+        paragraphs: [
+          'We purchase and scrap all types of passenger and commercial vehicles regardless of condition. Whether running, non-running, accident-damaged, flood-damaged, or completely immobilized, our local recovery team handles safe towing without any deductions from your quoted price.'
+        ],
+        subsections: [
+          {
+            heading: 'Old and end-of-life cars (ELV)',
+            text: 'Vehicles over 15 years old that cannot pass fitness or are uneconomical to maintain. We ensure scientific recycling in accordance with India’s Vehicle Scrapping Policy.'
+          },
+          {
+            heading: 'Accident and total loss vehicles',
+            text: 'Cars involved in collisions on hill highways or city roads declared total losses by insurance. We assess value fairly based on metal weight and recoverable spares.'
+          },
+          {
+            heading: 'Commercial cabs and hill taxis',
+            text: 'Tour taxis and utility vehicles (Maxx, Bolero, Innova) retired from Char Dham or Mussoorie routes that have completed their permit validity.'
+          },
+          {
+            heading: 'Non-running and idle society cars',
+            text: 'Vehicles with flat tyres, dead batteries, or seized engines parked in housing societies across Jakhan, Clement Town, and Rajpur Road.'
+          }
+        ]
+      },
+      {
+        heading: 'How scrap car pickup works in Dehradun',
+        subsections: [
+          {
+            heading: '1. Call or WhatsApp us',
+            text: 'Share your vehicle make, model, manufacturing year, condition, and pickup locality in Dehradun. Photos of all four sides help us calculate the best possible price.'
+          },
+          {
+            heading: '2. Transparent valuation',
+            text: 'We provide a clear quote based on current scrap steel and aluminium rates, vehicle kerb weight, and undamaged components — with zero hidden towing fees.'
+          },
+          {
+            heading: '3. Free doorstep towing',
+            text: 'Our recovery flatbed or towing team arrives at your doorstep, society parking, or mechanic garage in Dehradun at your chosen date and time.'
+          },
+          {
+            heading: '4. Payment and RC deregistration',
+            text: 'Receive immediate payment via bank transfer or cash upon vehicle handover, along with handover receipt and guided UK-07 RTO cancellation.'
+          }
+        ]
+      },
+      {
+        heading: 'Why Dehradun car owners trust AutoScrape Pro',
+        paragraphs: [
+          'Selling an old vehicle to an unverified local kabadiwala or roadside breaker in Dehradun poses severe legal risks. Unscrupulous operators frequently cut chassis numbers, resell parts on the black market, or put dangerous vehicles back on the road — while the vehicle remains registered in your name, leaving you liable for e-challans, accidents, or criminal misuse.',
+          'AutoScrape Pro provides a regulated, secure, and environmentally sound alternative right here in Dehradun. Every car undergoes scientific depollution, hazardous oils and fluids are captured responsibly, and deregistration paperwork is submitted to the RTO so your legal ownership is terminated cleanly.'
+        ],
+        bullets: [
+          'Direct local presence with our workshop facility in Banshiwala Jaajra, Dehradun',
+          '100% free doorstep towing across Dehradun and neighboring valley towns',
+          'Transparent pricing with no last-minute bargaining or towing deductions',
+          'Complete guidance for RC cancellation at Dehradun RTO (UK-07)',
+          'Eco-friendly depollution to safeguard the Doon Valley’s pristine ecosystem'
+        ]
+      },
+      {
+        heading: 'Dehradun RTO (UK-07) RC cancellation process',
+        paragraphs: [
+          'Deregistering your vehicle at the Regional Transport Office (RTO) in Dehradun (UK-07) is the essential final step of car disposal. Under Section 55 of the Motor Vehicles Act, the owner must notify the registering authority when a vehicle is permanently scrapped.',
+          'Our team prepares all necessary documentation, including Form 24 and affidavit declarations, verifies the engine and chassis numbers against your RC, and guides you through the Vahan portal deregistration so the vehicle is marked scrapped in official records.'
+        ]
+      },
+      {
+        heading: 'Visit our Dehradun facility or book doorstep collection',
+        paragraphs: [
+          'You can drop off your vehicle directly at our workshop facility in Banshiwala Jaajra, Dehradun, or schedule our free recovery vehicle to collect it from your doorstep anywhere in Dehradun district. We operate Monday to Saturday from 9:00 AM to 7:00 PM.'
+        ]
+      },
+      {
+        heading: 'Documents required for scrapping your car in Dehradun',
+        bullets: [
+          'Original RC (Registration Certificate) or valid certified copy',
+          'Vehicle owner’s Identity Proof (Aadhaar Card, PAN Card, or Voter ID)',
+          'Owner’s Address Proof (Electricity bill, Aadhaar, or Passport)',
+          'Bank NOC (No Objection Certificate) if the car was under hypothecation/loan',
+          'Copy of police report / FIR in case the original RC was lost or misplaced',
+          'Signed scrap sale agreement and deregistration forms (prepared by our team)'
+        ]
+      }
+    ],
+    coverage: {
+      heading: 'Areas we cover across Dehradun & Doon Valley',
+      text: 'We offer free doorstep scrap car pickup across every neighborhood, colony, and suburban area of Dehradun and surrounding valley towns:',
+      places: [
+        'Banshiwala Jaajra',
+        'Rajpur Road',
+        'Jakhan',
+        'Clement Town',
+        'Prem Nagar',
+        'Saharanpur Road',
+        'Haridwar Road',
+        'Clock Tower / Paltan Bazaar',
+        'Ballupur & Balliwala',
+        'Vasant Vihar',
+        'Dalanwala',
+        'Rispana & Dharampur',
+        'Kashiganj',
+        'Chakrata Road',
+        'Selaqui',
+        'Vikasnagar',
+        'Doiwala',
+        'Rishikesh',
+        'Mussoorie'
+      ]
+    },
+    faqs: [
+      {
+        question: 'Where is your car scrapping workshop in Dehradun?',
+        answer:
+          'Our main workshop and facility is located at Banshiwala Jaajra, Dehradun, Uttarakhand. You are welcome to visit our facility or request our free recovery tow truck to pick up your car anywhere in Dehradun.'
+      },
+      {
+        question: 'Do you charge for towing scrap cars in Dehradun?',
+        answer:
+          'No. We provide 100% free doorstep towing and recovery across Dehradun, including Rajpur Road, Jakhan, Prem Nagar, Clement Town, Saharanpur Road, and Selaqui. Towing costs are never deducted from your quote.'
+      },
+      {
+        question: 'How is the scrap car price calculated in Dehradun?',
+        answer:
+          'The price is determined by the vehicle’s kerb weight, prevailing scrap steel and aluminium market rates, and the value of functional reusable components such as batteries, alternators, tyres, and body panels.'
+      },
+      {
+        question: 'How long does the car pickup and payment take?',
+        answer:
+          'Once you accept our quote, we can often schedule collection within 2 to 4 hours or at any convenient time of your choice. Payment is transferred immediately upon vehicle handover.'
+      },
+      {
+        question: 'Will my car RC be cancelled at the Dehradun RTO (UK-07)?',
+        answer:
+          'Yes. We assist and guide you through the complete RC cancellation procedure with the Dehradun RTO (UK-07) on the Parivahan Vahan system, providing you with documented proof of scrapping.'
+      },
+      {
+        question: 'Can I scrap a Delhi (DL) or Punjab (PB) registered car in Dehradun?',
+        answer:
+          'Yes. If your vehicle was registered in Delhi, Punjab, Haryana, or Uttar Pradesh and is currently in Dehradun, we can buy and scrap it here, guiding the deregistration paperwork with the issuing RTO.'
+      }
+    ]
+  },
+
   // ───────────────────────────────── Punjab ─────────────────────────────────
   {
     slug: 'scrap-car-buyer-punjab',
@@ -300,7 +468,7 @@ export const locationPages: LocationPageData[] = [
       heading: 'Scrapping an old car in Uttarakhand, made simple',
       paragraphs: [
         'Driving in Uttarakhand is hard on a vehicle. Steep gradients wear out clutches and brakes, broken hill roads punish suspension, and monsoon landslides and flash floods leave cars damaged or stranded. Many older vehicles end up parked for good on a hillside plot or in a Dehradun lane, slowly rusting.',
-        'AutoScrape Pro buys scrap cars across Uttarakhand. Our yard in Saharanpur sits just across the state border from Dehradun, Haridwar and Roorkee, which lets us offer free pickup, a transparent price and RC cancellation support without long waits.'
+        'AutoScrape Pro buys scrap cars across Uttarakhand. Our facility in Banshiwala Jaajra, Dehradun gives us direct local presence in Uttarakhand, which lets us offer free pickup, a transparent price and RC cancellation support without long waits.'
       ]
     },
     sections: [
@@ -354,7 +522,7 @@ export const locationPages: LocationPageData[] = [
       {
         heading: 'Planning a pickup from Dehradun, Haridwar or Roorkee',
         paragraphs: [
-          'Dehradun, Haridwar and Roorkee are a short drive from our Saharanpur yard, so pickups there are straightforward to schedule. For Rishikesh, Kotdwar and the Kumaon plains around Haldwani, Rudrapur and Kashipur, we plan collection routes in advance — share your location early and we will confirm a slot.',
+          'Dehradun, Haridwar and Roorkee are serviced directly from our Dehradun workshop facility, so pickups there are straightforward to schedule. For Rishikesh, Kotdwar and the Kumaon plains around Haldwani, Rudrapur and Kashipur, we plan collection routes in advance — share your location early and we will confirm a slot.',
           'For vehicles parked on steep driveways, narrow lanes or hillside plots, a couple of photos showing access help us bring the right equipment. If a tow truck cannot reach the car directly, we will discuss the safest way to move it before the day of pickup.'
         ]
       },
@@ -407,37 +575,37 @@ export const locationPages: LocationPageData[] = [
     legacySlug: 'saharanpur',
     name: 'Saharanpur',
     area: { '@type': 'City', name: 'Saharanpur' },
-    metaTitle: 'Scrap Car Buyer in Saharanpur | Local Yard | AutoScrape Pro',
+    metaTitle: 'Scrap Car Buyer in Saharanpur | AutoScrape Pro',
     metaDescription:
-      'Local scrap car buyer in Saharanpur, on Ambala Road. Free pickup across Saharanpur, Deoband, Gangoh & nearby, with RC cancellation support. Call or visit today.',
-    eyebrow: 'Our Home Yard',
+      'Scrap car buyer in Saharanpur. Free pickup across Saharanpur, Deoband, Gangoh & nearby with RC cancellation support. Call or WhatsApp for a free quote.',
+    eyebrow: 'Doorstep Pickup Service',
     h1: 'Scrap Car Buyer in Saharanpur',
     heroSubtitle:
-      'Local yard on Ambala Road, free doorstep pickup across Saharanpur district and a straight, explained price for your old car.',
+      'Free doorstep pickup across Saharanpur district and a straight, transparent price for your old or damaged car.',
     cardSummary:
-      'Our home yard on Ambala Road — the quickest pickups across Saharanpur district and nearby towns.',
+      'Free scrap car pickup across Saharanpur district, Deoband, Gangoh and nearby towns.',
     heroImage: photos.endOfLifeSedan,
     featuredImage: photos.scrapYard,
     intro: {
-      heading: 'Your local scrap car buyer in Saharanpur',
+      heading: 'Your trusted scrap car buyer in Saharanpur',
       paragraphs: [
-        'AutoScrape Pro is based in Saharanpur, with our yard on Ambala Road in the Industrial Area. For car owners in the city and across the district that means the shortest wait for pickup, a team that knows local roads, and a yard you can visit in person if you prefer to talk face to face.',
+        'AutoScrape Pro provides regular vehicle collection across Saharanpur, Deoband, Gangoh and surrounding areas. For car owners across the district that means prompt pickup, a team that knows local roads, and a clear, explained price.',
         'We buy old, damaged, non-running and end-of-life vehicles, collect them free of charge, pay you on handover and guide the RC cancellation with the RTO — so the car is legally off your name.'
       ]
     },
     sections: [
       {
-        heading: 'Why sell your scrap car to a Saharanpur-based buyer',
+        heading: 'Why sell your scrap car to AutoScrape Pro',
         paragraphs: [
-          'Buyers who come in from other cities often quote high on the phone and then renegotiate at your gate, adding travel and towing charges. Because our yard is local, there is no long-distance recovery cost to recover from you, and pickups can usually be arranged around your schedule.',
-          'Being local also means accountability. You know where to find us, and we rely on word of mouth from Saharanpur families, workshops and dealers.'
+          'Buyers who come in from other cities often quote high on the phone and then renegotiate at your gate, adding travel and towing charges. Because we operate regular collection routes in Saharanpur, there is no long-distance fee, and pickups are arranged around your schedule.',
+          'We believe in straightforward accountability. You know our credentials, and we rely on trust and word of mouth from Saharanpur families, workshops and dealers.'
         ],
         bullets: [
-          'Yard on Ambala Road, Industrial Area — visit during opening hours',
-          'Free pickup across Saharanpur city and district',
+          'Free doorstep pickup across Saharanpur city and district',
           'Transparent, explained valuation with no hidden deductions',
-          'Payment on handover',
-          'RC cancellation and RTO paperwork guided end to end'
+          'Immediate payment on vehicle handover',
+          'RC cancellation and RTO paperwork guided end to end',
+          'Depollution and eco-friendly car recycling'
         ]
       },
       {
@@ -452,7 +620,7 @@ export const locationPages: LocationPageData[] = [
       {
         heading: 'How scrap car pickup works in Saharanpur',
         subsections: [
-          { heading: '1. Call, WhatsApp or visit', text: 'Share the model, year, condition and your locality — or drop by the yard on Ambala Road.' },
+          { heading: '1. Call or WhatsApp', text: 'Share the vehicle model, year, condition and locality in Saharanpur.' },
           { heading: '2. Get a clear price', text: 'We explain the valuation based on weight, current scrap rates and reusable parts.' },
           { heading: '3. Free collection', text: 'We tow the car from your doorstep at a time that suits you, at no charge.' },
           { heading: '4. Payment and RC cancellation', text: 'You are paid on handover and we guide the deregistration with the RTO.' }
@@ -479,9 +647,9 @@ export const locationPages: LocationPageData[] = [
         ]
       },
       {
-        heading: 'Visiting our Saharanpur yard',
+        heading: 'Scheduling your vehicle collection',
         paragraphs: [
-          'You are welcome to visit the yard on Ambala Road between 9 AM and 7 PM, Monday to Saturday. Bring your RC and ID if you would like to complete the paperwork in person, or drive the car in yourself if it still runs — some owners prefer to see where their vehicle is going. Call ahead and we will make sure someone is free to walk you through the process.'
+          'You can contact us between 9 AM and 7 PM, Monday to Saturday. Share your RC and vehicle details, and our recovery team will schedule a convenient collection slot at your doorstep in Saharanpur or nearby.'
         ]
       },
       {
@@ -497,7 +665,7 @@ export const locationPages: LocationPageData[] = [
     ],
     coverage: {
       heading: 'Saharanpur district and nearby towns',
-      text: 'We collect across Saharanpur city and district, and from neighbouring towns in western Uttar Pradesh, Haryana and Uttarakhand that are a short drive from our yard.',
+      text: 'We collect across Saharanpur city and district, and from neighbouring towns in western Uttar Pradesh, Haryana and Uttarakhand.',
       places: [
         'Saharanpur City', 'Deoband', 'Gangoh', 'Behat', 'Nakur', 'Sarsawa', 'Rampur Maniharan', 'Nanauta', 'Chilkana',
         'Yamunanagar', 'Jagadhri', 'Shamli', 'Muzaffarnagar', 'Roorkee'
@@ -505,8 +673,8 @@ export const locationPages: LocationPageData[] = [
     },
     faqs: [
       {
-        question: 'Where is your scrap yard in Saharanpur?',
-        answer: 'Our yard is on Ambala Road in the Industrial Area, Saharanpur 247001. It is open Monday to Saturday, 9 AM to 7 PM.'
+        question: 'Where is AutoScrape Pro located?',
+        answer: 'Our main workshop facility is in Banshiwala Jaajra, Dehradun, Uttarakhand, and our recovery vehicles provide free doorstep collection across Saharanpur, Deoband, Gangoh and nearby districts.'
       },
       {
         question: 'Do you pick up scrap cars from Deoband and Gangoh?',
@@ -518,7 +686,7 @@ export const locationPages: LocationPageData[] = [
       },
       {
         question: 'How quickly can you collect my car in Saharanpur?',
-        answer: 'Because our yard is local, pickup can usually be arranged at a time that suits you once you accept the quote.'
+        answer: 'Pickup can usually be arranged at a time that suits you once you accept the quote, with prompt collection across Saharanpur district.'
       },
       {
         question: 'Is RC cancellation included?',

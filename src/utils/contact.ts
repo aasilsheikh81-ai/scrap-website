@@ -11,7 +11,8 @@ import { business } from '../config/business';
  * details block where a business would normally list the number in full.
  */
 
-const fullAddress = `${business.address.line1}, ${business.address.city}, ${business.address.state} ${business.address.pinCode}, ${business.address.country}`;
+const fullAddress =
+  business.address.formatted || `${business.address.line1}, ${business.address.city}, ${business.address.state}`;
 
 export const telHref = `tel:${business.phoneTel}`;
 

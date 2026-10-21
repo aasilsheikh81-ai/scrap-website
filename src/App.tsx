@@ -31,7 +31,7 @@ function LegacyAreaRedirect() {
 function App() {
   return (
     // Bottom padding clears the mobile action bar, which is hidden from lg up.
-    <div className="min-h-screen bg-brand-offwhite pb-[86px] lg:pb-0">
+    <div className="min-h-screen bg-white pb-[86px] lg:pb-0">
       <ScrollToTop />
       <Header />
       <Routes>

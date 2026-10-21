@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, ArrowUpRight, Navigation, Clock, MapPin } from 'lucide-react';
 import { business } from '../config/business';
-import { contactBackground } from '../config/images';
 import {
   telHref,
   whatsappHref,
@@ -15,141 +14,132 @@ const easing = [0.16, 1, 0.3, 1] as const;
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-brand-black py-24 md:py-32">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={contactBackground.src}
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-          className="h-full w-full object-cover object-center opacity-[0.18]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black via-brand-black/92 to-brand-charcoal" />
-        <div className="absolute inset-0 bg-grid" />
-      </div>
-
-      <div className="pointer-events-none absolute left-1/2 top-10 z-[1] h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-brand-red/[0.12] blur-[140px]" />
-
+    <section id="contact" className="relative overflow-hidden bg-[#EAF8EF]/50 py-20 md:py-28 border-t border-[#E5E7EB]">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <motion.div
-          className="mx-auto mb-16 max-w-3xl text-center"
-          initial={{ opacity: 0, y: 30 }}
+          className="mx-auto mb-14 max-w-3xl text-center"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: easing }}
         >
-          <span className="eyebrow eyebrow--center mb-5">Get In Touch</span>
-          <h2 className="display mb-6 text-4xl text-white md:text-6xl">Ready to scrap your vehicle?</h2>
-          <p className="lede mx-auto max-w-2xl text-lg font-light leading-relaxed text-brand-subtle md:text-xl">
-            Reach out for a quick estimate and hassle-free collection. One tap connects you straight to our
-            team — no forms, no waiting.
+          <span className="eyebrow eyebrow--center mb-4">Get In Touch</span>
+          <h2 className="display mb-4 text-3xl md:text-4xl lg:text-[42px]">
+            Ready to Scrap Your Vehicle?
+          </h2>
+          <p className="lede mx-auto max-w-2xl text-base sm:text-lg leading-relaxed text-[#667085]">
+            Reach out for a quick estimate and hassle-free vehicle collection. One tap connects you straight
+            to our team — transparent pricing and fast response.
           </p>
         </motion.div>
 
-        {/* Two primary contact actions */}
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
-          {/* Call */}
+        {/* Two Primary Contact Cards: Call & WhatsApp */}
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 mb-10">
+          {/* Call Card */}
           <motion.a
             href={telHref}
             aria-label={contactAria.call}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6, delay: 0.05, ease: easing }}
-            className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.04] p-9 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-brand-red/50 hover:shadow-[0_32px_64px_-28px_rgba(225,29,46,0.55)] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black md:p-10"
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.5, delay: 0.05, ease: easing }}
+            className="group relative flex flex-col justify-between rounded-3xl border border-[#E5E7EB] bg-white p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-[#FF8717]/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8717]"
           >
-            <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-red/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div>
+              <span className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-[#FFF3E5] text-[#FF8717] transition-transform duration-300 group-hover:scale-110">
+                <Phone className="h-7 w-7 fill-[#FF8717]" />
+              </span>
 
-            <span className="relative mb-7 grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-brand-red to-brand-darkred text-white shadow-[0_16px_32px_-16px_rgba(225,29,46,0.9)] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
-              <Phone className="h-7 w-7" />
-            </span>
+              <h3 className="mb-2 text-2xl font-bold tracking-tight text-[#101C32]">Call Now</h3>
+              <p className="mb-8 font-normal leading-relaxed text-[#667085]">
+                Speak directly with our team for immediate assistance and an on-the-spot scrap valuation.
+              </p>
+            </div>
 
-            <h3 className="relative mb-3 text-2xl font-bold tracking-tight text-white">Call Now</h3>
-            <p className="relative mb-9 flex-1 font-light leading-relaxed text-brand-muted transition-colors duration-500 group-hover:text-brand-subtle">
-              Speak directly with our team for immediate assistance and an on-the-spot scrap valuation.
-            </p>
-
-            <span className="relative inline-flex w-fit items-center gap-2.5 rounded-full bg-brand-red px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-white shadow-[0_12px_28px_-14px_rgba(225,29,46,0.9)] transition-all duration-300 group-hover:gap-4">
-              {contactLabels.call}
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-
-            <span className="relative mt-5 text-[11px] font-medium uppercase tracking-[0.16em] text-white/35">
-              Opens your dialer
-            </span>
+            <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#FF8717] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-xs transition-transform duration-200 group-hover:translate-x-1">
+                {contactLabels.call}
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+              <span className="text-xs text-[#667085] font-medium">Opens dialer</span>
+            </div>
           </motion.a>
 
-          {/* WhatsApp */}
+          {/* WhatsApp Card */}
           <motion.a
             href={whatsappHref}
             {...externalLinkProps}
             aria-label={contactAria.whatsapp}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6, delay: 0.15, ease: easing }}
-            className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-white/[0.09] bg-white/[0.04] p-9 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-brand-whatsapp/50 hover:shadow-[0_32px_64px_-28px_rgba(37,211,102,0.45)] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-whatsapp focus-visible:ring-offset-2 focus-visible:ring-offset-brand-black md:p-10"
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.5, delay: 0.1, ease: easing }}
+            className="group relative flex flex-col justify-between rounded-3xl border border-[#E5E7EB] bg-white p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-[#087A45]/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#087A45]"
           >
-            <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-whatsapp/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div>
+              <span className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-[#EAF8EF] text-[#087A45] transition-transform duration-300 group-hover:scale-110">
+                <MessageCircle className="h-7 w-7 text-[#087A45] fill-[#087A45]/20" />
+              </span>
 
-            <span className="relative mb-7 grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-[#2BE26F] to-[#17A34A] text-[#042911] shadow-[0_16px_32px_-16px_rgba(37,211,102,0.9)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
-              <MessageCircle className="h-7 w-7" />
-            </span>
+              <h3 className="mb-2 text-2xl font-bold tracking-tight text-[#101C32]">WhatsApp</h3>
+              <p className="mb-8 font-normal leading-relaxed text-[#667085]">
+                Send vehicle photos and RC details for an instant scrap estimate right on WhatsApp.
+              </p>
+            </div>
 
-            <h3 className="relative mb-3 text-2xl font-bold tracking-tight text-white">WhatsApp</h3>
-            <p className="relative mb-9 flex-1 font-light leading-relaxed text-brand-muted transition-colors duration-500 group-hover:text-brand-subtle">
-              Send photos and your vehicle condition for a fast, convenient response at any time of day.
-            </p>
-
-            <span className="relative inline-flex w-fit items-center gap-2.5 rounded-full bg-brand-whatsapp px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-[#042911] shadow-[0_12px_28px_-14px_rgba(37,211,102,0.9)] transition-all duration-300 group-hover:gap-4">
-              {contactLabels.whatsappLong}
-              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </span>
-
-            <span className="relative mt-5 text-[11px] font-medium uppercase tracking-[0.16em] text-white/35">
-              Opens a chat with our team
-            </span>
+            <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB]">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#087A45] px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-xs transition-transform duration-200 group-hover:translate-x-1">
+                {contactLabels.whatsappLong}
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+              <span className="text-xs text-[#667085] font-medium">Quick response</span>
+            </div>
           </motion.a>
         </div>
 
-        {/* Supporting details strip */}
+        {/* Supporting Details Strip */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6, delay: 0.25, ease: easing }}
-          className="mx-auto mt-6 grid max-w-4xl grid-cols-1 gap-6 rounded-[2rem] border border-white/[0.07] bg-white/[0.025] p-8 backdrop-blur-md sm:grid-cols-3"
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, delay: 0.2, ease: easing }}
+          className="mx-auto grid max-w-4xl grid-cols-1 gap-6 rounded-2xl border border-[#E5E7EB] bg-white p-6 sm:p-7 shadow-xs sm:grid-cols-3"
         >
           <div className="flex items-start gap-3.5">
-            <Clock className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#FFF3E5] text-[#FF8717]">
+              <Clock className="h-5 w-5" />
+            </span>
             <div>
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/40">Hours</p>
-              <p className="text-sm font-light text-white/85">{business.hours}</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-[#667085]">Operating Hours</p>
+              <p className="text-sm font-bold text-[#101C32] mt-0.5">{business.hours}</p>
             </div>
           </div>
 
           <div className="flex items-start gap-3.5">
-            <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#EAF8EF] text-[#087A45]">
+              <MapPin className="h-5 w-5" />
+            </span>
             <div>
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/40">Yard</p>
-              <p className="text-sm font-light text-white/85">
-                {business.address.city}, {business.address.state}
+              <p className="text-xs font-bold uppercase tracking-wider text-[#667085]">Workshop Address</p>
+              <p className="text-sm font-bold text-[#101C32] mt-0.5">
+                Banshiwala Jaajra, Dehradun, Uttarakhand
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-3.5">
-            <Navigation className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" />
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#F9FAFB] text-[#101C32] border border-[#E5E7EB]">
+              <Navigation className="h-5 w-5" />
+            </span>
             <div>
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.16em] text-white/40">Visit Us</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-[#667085]">Directions</p>
               <a
                 href={directionsHref}
                 {...externalLinkProps}
                 aria-label={contactAria.directions}
-                className="text-sm font-semibold text-white underline decoration-brand-red decoration-2 underline-offset-4 transition-colors hover:text-brand-red focus:outline-none focus-visible:text-brand-red"
+                className="inline-block text-sm font-bold text-[#087A45] hover:underline mt-0.5"
               >
-                {contactLabels.directions}
+                {contactLabels.directions} →
               </a>
             </div>
           </div>

@@ -55,6 +55,6 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'Do you cover my area?',
     answer:
-      'We collect scrap cars across Punjab, Delhi NCR, Uttarakhand and in and around Saharanpur, where our yard is based. Share your pin code when you call or message and we will confirm the pickup slot.'
+      'We collect scrap cars across Punjab, Delhi NCR, Uttarakhand and Saharanpur, with our main facility located in Banshiwala Jaajra, Dehradun, Uttarakhand. Share your location when you call or message and we will confirm the pickup slot.'
   }
 ];

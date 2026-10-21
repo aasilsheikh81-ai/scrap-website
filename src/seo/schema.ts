@@ -23,9 +23,10 @@ const postalAddress = {
 };
 
 export const areaServed = [
+  { '@type': 'City', name: 'Dehradun' },
+  { '@type': 'State', name: 'Uttarakhand' },
   { '@type': 'State', name: 'Punjab' },
   { '@type': 'AdministrativeArea', name: 'National Capital Region (NCR)' },
-  { '@type': 'State', name: 'Uttarakhand' },
   { '@type': 'City', name: 'Saharanpur' }
 ];
 
@@ -62,7 +63,7 @@ export function localBusinessSchema() {
     url: `${business.siteUrl}/`,
     image: [absoluteUrl(ogImage.src), absoluteUrl(heroImage.jpg)],
     description:
-      'AutoScrape Pro buys scrap, old, damaged and end-of-life vehicles across Punjab, NCR, Uttarakhand and Saharanpur with free pickup, transparent valuation and RTO paperwork support.',
+      'AutoScrape Pro is a scrap car buyer and vehicle scrapping facility based in Banshiwala Jaajra, Dehradun, Uttarakhand, offering free doorstep vehicle pickup, transparent price valuation and RC cancellation support across Dehradun, Uttarakhand, Punjab, Delhi NCR and Saharanpur.',
     telephone: business.phoneTel,
     priceRange: '₹₹',
     currenciesAccepted: 'INR',
@@ -83,11 +84,14 @@ export function localBusinessSchema() {
     contactPoint,
     parentOrganization: { '@id': ORG_ID },
     knowsAbout: [
+      'Scrap car buyer in Dehradun',
+      'Vehicle scrapping service in Dehradun',
+      'Old car buyer in Dehradun',
       'Scrap car buying',
       'End-of-life vehicle (ELV) scrapping',
       'Vehicle dismantling',
-      'Car recycling',
-      'RC cancellation',
+      'Car recycling in Uttarakhand',
+      'RC cancellation in Dehradun RTO',
       'Vehicle deregistration',
       'Vehicle Scrapping Policy of India'
     ],
@@ -95,10 +99,10 @@ export function localBusinessSchema() {
       '@type': 'OfferCatalog',
       name: 'Vehicle scrapping services',
       itemListElement: [
-        'Scrap Car Pickup',
-        'Vehicle Disposal',
+        'Scrap Car Pickup Dehradun',
+        'Vehicle Disposal & Depollution',
         'ELV Vehicle Scrapping',
-        'Scrap Car Valuation',
+        'Scrap Car Price Valuation',
         'RC Cancellation & RTO Documentation',
         'Free Vehicle Collection'
       ].map((name) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name } })),

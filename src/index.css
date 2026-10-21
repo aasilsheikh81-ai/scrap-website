@@ -1,34 +1,44 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Design tokens
+   Design tokens — AutoScrape Pro Light Theme
    ============================================================ */
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  /* Neutrals - a cool, near-black ladder for layered dark sections */
-  --color-brand-black: #08090A;
-  --color-brand-charcoal: #101114;
-  --color-brand-surface: #16181C;
-  --color-brand-elevated: #1D2025;
-  --color-brand-offwhite: #F7F7F8;
-  --color-brand-muted: #8A8F98;
-  --color-brand-subtle: #B7BCC4;
+  /* Theme Palette */
+  --color-brand-white: #FFFFFF;
+  --color-brand-offwhite: #F9FAFB;
+  --color-brand-lightgreen: #EAF8EF;
+  --color-brand-lightorange: #FFF3E5;
+  --color-brand-border: #E5E7EB;
 
-  /* Brand */
-  --color-brand-red: #E11D2E;
-  --color-brand-darkred: #A10D1B;
-  --color-brand-accent: #F26419;
+  --color-brand-green: #087A45;
+  --color-brand-darkgreen: #075D37;
+  --color-brand-orange: #FF8717;
+  --color-brand-navy: #101C32;
+  --color-brand-slate: #667085;
   --color-brand-whatsapp: #25D366;
+
+  /* Backward Compatibility Aliases */
+  --color-brand-black: #101C32;
+  --color-brand-charcoal: #17243B;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-elevated: #F8FAFC;
+  --color-brand-muted: #667085;
+  --color-brand-subtle: #475467;
+  --color-brand-red: #087A45;
+  --color-brand-darkred: #075D37;
+  --color-brand-accent: #FF8717;
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Elevation */
-  --shadow-soft: 0 1px 2px rgba(8, 9, 10, 0.04), 0 8px 24px -12px rgba(8, 9, 10, 0.12);
-  --shadow-lift: 0 24px 48px -24px rgba(8, 9, 10, 0.35);
-  --shadow-glow-red: 0 18px 40px -18px rgba(225, 29, 46, 0.55);
-  --shadow-glow-green: 0 18px 40px -18px rgba(37, 211, 102, 0.45);
+  --shadow-soft: 0 1px 3px rgba(16, 28, 50, 0.05), 0 8px 24px -10px rgba(16, 28, 50, 0.08);
+  --shadow-lift: 0 20px 35px -15px rgba(16, 28, 50, 0.12);
+  --shadow-glow-green: 0 12px 28px -10px rgba(8, 122, 69, 0.4);
+  --shadow-glow-orange: 0 12px 28px -10px rgba(255, 135, 23, 0.4);
 }
 
 /* ============================================================
@@ -36,42 +46,41 @@
    ============================================================ */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 88px;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  @apply bg-brand-offwhite text-brand-black antialiased;
+  @apply bg-white text-brand-slate antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: var(--color-brand-red);
-  color: #fff;
+  background-color: #087A45;
+  color: #FFFFFF;
 }
 
-/* Slim, on-brand scrollbar (desktop only) */
+/* Modern clean scrollbar */
 @media (pointer: fine) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: #3A3D44 transparent;
+    scrollbar-color: #CBD5E1 transparent;
   }
-  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: #3A3D44;
+    background: #CBD5E1;
     border-radius: 999px;
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     background-clip: content-box;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-brand-red);
+    background: #087A45;
     background-clip: content-box;
   }
 }
 
-/* Respect users who ask for calmer motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -82,44 +91,46 @@ body {
 }
 
 /* ============================================================
-   Components
+   Components & Typography
    ============================================================ */
 
-/* Section eyebrow - small caps label above every section heading */
+/* Section eyebrow */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
   font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-brand-red);
+  color: #087A45;
 }
 .eyebrow::before {
   content: "";
-  width: 1.75rem;
+  width: 1.5rem;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-brand-red));
+  background: linear-gradient(90deg, transparent, #087A45);
 }
 .eyebrow--center::after {
   content: "";
-  width: 1.75rem;
+  width: 1.5rem;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--color-brand-red), transparent);
+  background: linear-gradient(90deg, #087A45, transparent);
 }
 
-/* Display headings */
+/* Headings */
 .display {
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.1;
+  color: #101C32;
   text-wrap: balance;
 }
 
 .lede {
+  color: #667085;
   text-wrap: pretty;
 }
 
@@ -130,16 +141,17 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.625rem;
-  border-radius: 0.875rem;
-  padding: 0.9375rem 1.75rem;
+  border-radius: 0.75rem;
+  padding: 0.8125rem 1.625rem;
   font-weight: 700;
+  font-size: 0.9375rem;
   letter-spacing: -0.01em;
   white-space: nowrap;
   overflow: hidden;
   isolation: isolate;
-  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo),
-    background-color 0.3s var(--ease-out-expo), color 0.3s var(--ease-out-expo),
-    border-color 0.3s var(--ease-out-expo);
+  transition: transform 0.25s var(--ease-out-expo), box-shadow 0.25s var(--ease-out-expo),
+    background-color 0.25s var(--ease-out-expo), color 0.25s var(--ease-out-expo),
+    border-color 0.25s var(--ease-out-expo);
 }
 .btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
@@ -148,82 +160,101 @@ body {
   outline-offset: 3px;
 }
 
-/* Light sweep that runs across a button on hover */
-.btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.22) 50%, transparent 80%);
-  transform: translateX(-120%);
-  transition: transform 0.9s var(--ease-out-expo);
-}
-.btn:hover::after { transform: translateX(120%); }
-
+/* Primary Forest Green button */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-brand-red), var(--color-brand-darkred));
-  color: #fff;
-  box-shadow: 0 10px 24px -14px rgba(225, 29, 46, 0.9);
+  background-color: #087A45;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px -3px rgba(8, 122, 69, 0.45);
 }
-.btn-primary:hover { box-shadow: var(--shadow-glow-red); }
+.btn-primary:hover {
+  background-color: #075D37;
+  box-shadow: var(--shadow-glow-green);
+}
 
+/* Orange Accent button (Call Now) */
+.btn-orange {
+  background-color: #FF8717;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px -3px rgba(255, 135, 23, 0.45);
+}
+.btn-orange:hover {
+  background-color: #E67205;
+  box-shadow: var(--shadow-glow-orange);
+}
+
+/* WhatsApp button */
 .btn-whatsapp {
-  background: linear-gradient(135deg, #2BE26F, #17A34A);
-  color: #042911;
-  box-shadow: 0 10px 24px -14px rgba(37, 211, 102, 0.9);
+  background-color: #FFFFFF;
+  color: #087A45;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 3px rgba(16, 28, 50, 0.05);
 }
-.btn-whatsapp:hover { box-shadow: var(--shadow-glow-green); }
+.btn-whatsapp:hover {
+  background-color: #EAF8EF;
+  border-color: #087A45;
+  color: #075D37;
+}
 
-.btn-ghost {
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(12px);
+/* Ghost / Outlined button */
+.btn-ghost, .btn-outline {
+  background-color: #FFFFFF;
+  color: #101C32;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 3px rgba(16, 28, 50, 0.04);
 }
-.btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.28);
+.btn-ghost:hover, .btn-outline:hover {
+  background-color: #F9FAFB;
+  border-color: #CBD5E1;
+  color: #087A45;
 }
 
 .btn-outline-dark {
   background: transparent;
-  color: var(--color-brand-black);
-  border: 1px solid rgba(8, 9, 10, 0.14);
+  color: #101C32;
+  border: 1px solid #E5E7EB;
 }
 .btn-outline-dark:hover {
-  background: var(--color-brand-black);
-  color: #fff;
-  border-color: var(--color-brand-black);
+  background: #087A45;
+  color: #FFFFFF;
+  border-color: #087A45;
 }
 
 /* Surfaces ------------------------------------------------ */
-.surface-dark {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-}
-
 .surface-light {
-  background: #fff;
-  border: 1px solid rgba(8, 9, 10, 0.07);
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
   box-shadow: var(--shadow-soft);
 }
 
-/* Faint grid so flat panels read as textured, not empty */
+.surface-dark {
+  background: #101C32;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+/* Decorative subtle dot patterns */
+.bg-dot-pattern {
+  background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
+.bg-dot-pattern-green {
+  background-image: radial-gradient(rgba(8, 122, 69, 0.25) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
+}
+
 .bg-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    linear-gradient(rgba(8, 122, 69, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 122, 69, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 .bg-grid-light {
   background-image:
-    linear-gradient(rgba(8, 9, 10, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(8, 9, 10, 0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 100%);
+    linear-gradient(rgba(16, 28, 50, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 28, 50, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 /* Section seams ------------------------------------------- */
@@ -238,18 +269,18 @@ body {
   translate: -50% 0;
   width: min(1100px, 90%);
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(225, 29, 46, 0.45), transparent);
+  background: linear-gradient(90deg, transparent, #E5E7EB, transparent);
 }
 
-/* Animated live dot --------------------------------------- */
+/* Animated live dot */
 .live-dot {
   position: relative;
   display: inline-flex;
   height: 0.5rem;
   width: 0.5rem;
   border-radius: 999px;
-  background: var(--color-brand-accent);
-  box-shadow: 0 0 10px rgba(242, 100, 25, 0.9);
+  background: #FF8717;
+  box-shadow: 0 0 8px rgba(255, 135, 23, 0.8);
 }
 .live-dot::after {
   content: "";
@@ -263,7 +294,7 @@ body {
   75%, 100% { transform: scale(2.4); opacity: 0; }
 }
 
-/* Marquee for the trust strip ----------------------------- */
+/* Marquee for the trust strip */
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -274,10 +305,3 @@ body {
   animation: marquee 38s linear infinite;
 }
 .marquee:hover .marquee-track { animation-play-state: paused; }
-
-/* Gentle float for decorative accents --------------------- */
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
-.float-slow { animation: float-slow 7s ease-in-out infinite; }

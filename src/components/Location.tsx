@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
 import { business } from '../config/business';
+import { photos } from '../config/images';
 import {
   telHref,
   directionsHref,
@@ -14,78 +15,76 @@ const easing = [0.16, 1, 0.3, 1] as const;
 
 export default function Location() {
   return (
-    <section id="location" className="relative overflow-hidden bg-brand-black py-24 text-white md:py-32">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-charcoal via-brand-black to-brand-black" />
-      <div className="pointer-events-none absolute inset-0 bg-grid" />
-
+    <section id="location" className="relative overflow-hidden bg-white py-20 md:py-28 border-t border-[#E5E7EB]">
       <div className="container relative z-10 mx-auto px-4 md:px-6">
         <motion.div
-          className="mx-auto mb-16 max-w-3xl text-center"
-          initial={{ opacity: 0, y: 30 }}
+          className="mx-auto mb-14 max-w-3xl text-center"
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: easing }}
         >
-          <span className="eyebrow eyebrow--center mb-5">Physical Business Location</span>
-          <h2 className="display mb-5 text-3xl md:text-5xl">Visit our scrap yard in {business.address.city}</h2>
-          <p className="mb-3 text-xl font-bold text-brand-red md:text-2xl">
-            {business.address.city}, {business.address.state}
+          <span className="eyebrow eyebrow--center mb-4">Physical Business Location</span>
+          <h2 className="display mb-4 text-3xl md:text-4xl lg:text-[42px]">
+            Visit Our Scrap Yard in Dehradun
+          </h2>
+          <p className="mb-2 text-xl font-bold text-[#087A45]">
+            Banshiwala Jaajra, Dehradun, Uttarakhand
           </p>
-          <p className="lede text-lg font-light leading-relaxed text-brand-muted">
-            Drop by the yard on Ambala Road to discuss your vehicle in person, or call ahead and we will have a valuation ready.
+          <p className="lede text-base sm:text-lg leading-relaxed text-[#667085]">
+            Visit our workshop in Dehradun to discuss your vehicle in person, or call ahead and we will have a transparent valuation ready.
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.8, ease: easing }}
-          className="surface-dark flex flex-col overflow-hidden rounded-[2rem] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)] lg:flex-row"
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.7, ease: easing }}
+          className="flex flex-col overflow-hidden rounded-3xl border border-[#E5E7EB] bg-[#F9FAFB] shadow-md lg:flex-row"
         >
-          {/* Details */}
-          <div className="order-2 flex w-full flex-col justify-center p-8 md:p-12 lg:order-1 lg:w-2/5">
-            {/* Facility photo */}
-            <div className="group relative mb-9 overflow-hidden rounded-2xl border border-white/10 shadow-lg">
+          {/* Details Column */}
+          <div className="order-2 flex w-full flex-col justify-center p-6 sm:p-10 lg:order-1 lg:w-5/12 bg-white border-t lg:border-t-0 lg:border-r border-[#E5E7EB]">
+            {/* Workshop Signboard & Entrance Photo */}
+            <div className="group relative mb-8 overflow-hidden rounded-2xl border border-[#E5E7EB] shadow-xs">
               <img
-                src={business.locationImage.src}
-                srcSet={business.locationImage.srcSet}
+                src={photos.workshopSignboard.src}
+                srcSet={photos.workshopSignboard.srcSet}
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                width={business.locationImage.width}
-                height={business.locationImage.height}
-                alt={business.locationImage.alt}
-                title={business.locationImage.title}
+                width={photos.workshopSignboard.width}
+                height={photos.workshopSignboard.height}
+                alt={photos.workshopSignboard.alt}
+                title={photos.workshopSignboard.title}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[16/8] w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
+                className="aspect-[16/9] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/10 to-transparent" />
-              <div className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-3">
-                <span className="flex items-center gap-2 text-xs font-bold tracking-wide text-white">
-                  <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-                  {business.locationImage.title}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#101C32]/70 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-x-4 bottom-3 flex items-center justify-between gap-3 text-white">
+                <span className="flex items-center gap-2 text-xs font-bold">
+                  <span className="h-2 w-2 rounded-full bg-[#25D366] animate-pulse" />
+                  AutoScrape Pro Signboard &amp; Facility
                 </span>
-                <span className="rounded border border-white/10 bg-brand-black/60 px-2 py-0.5 text-[10px] uppercase tracking-[0.16em] text-brand-subtle backdrop-blur-sm">
-                  Physical Yard
+                <span className="rounded-md bg-white/20 px-2 py-0.5 text-[10px] uppercase font-bold tracking-wider backdrop-blur-xs">
+                  Dehradun
                 </span>
               </div>
             </div>
 
-            {/* Address */}
-            <div className="mb-9">
-              <div className="mb-5 flex items-center gap-4">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-red/12 text-brand-red">
+            {/* Address Card as required by prompt Section 5 */}
+            <div className="mb-8">
+              <div className="mb-3 flex items-center gap-3">
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#EAF8EF] text-[#087A45]">
                   <MapPin className="h-5 w-5" />
                 </span>
-                <h3 className="text-xl font-bold tracking-tight">Address</h3>
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-[#667085]">Workshop Address</h3>
+                  <p className="text-lg font-extrabold text-[#101C32]">{business.name}</p>
+                </div>
               </div>
 
-              <p className="mb-2 text-lg font-bold text-white">{business.name}</p>
-              <address className="mb-8 text-[15px] font-light not-italic leading-relaxed text-brand-muted">
-                {business.address.line1}
-                <br />
-                {business.address.city}, {business.address.state} {business.address.pinCode},{' '}
-                {business.address.country}
+              <address className="mb-6 pl-13 text-base not-italic font-medium leading-relaxed text-[#101C32]">
+                Banshiwala Jaajra, Dehradun, Uttarakhand
               </address>
 
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -93,7 +92,7 @@ export default function Location() {
                   href={directionsHref}
                   {...externalLinkProps}
                   aria-label={contactAria.directions}
-                  className="btn btn-primary flex-1 !px-5 text-sm"
+                  className="btn btn-primary flex-1 !py-3 !px-5 text-sm font-bold flex items-center justify-center gap-2 shadow-xs"
                 >
                   <Navigation className="h-4 w-4" />
                   <span>{contactLabels.directions}</span>
@@ -101,39 +100,40 @@ export default function Location() {
                 <a
                   href={telHref}
                   aria-label={contactAria.call}
-                  className="btn btn-ghost flex-1 !px-5 text-sm"
+                  className="btn btn-orange flex-1 !py-3 !px-5 text-sm font-bold flex items-center justify-center gap-2 shadow-xs"
                 >
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-4 w-4 fill-white" />
                   <span>{contactLabels.call}</span>
                 </a>
               </div>
             </div>
 
-            {/* Hours */}
-            <div className="border-t border-white/10 pt-8">
-              <div className="mb-4 flex items-center gap-4">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/[0.06] text-brand-subtle">
-                  <Clock className="h-5 w-5" />
+            {/* Opening Hours */}
+            <div className="border-t border-[#E5E7EB] pt-6">
+              <div className="mb-2 flex items-center gap-3">
+                <span className="grid h-9 w-9 place-items-center rounded-xl bg-[#FFF3E5] text-[#FF8717]">
+                  <Clock className="h-4 w-4" />
                 </span>
-                <h3 className="text-lg font-bold tracking-tight">Opening Hours</h3>
+                <div>
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-[#667085]">Working Hours</h4>
+                  <p className="text-sm font-bold text-[#101C32]">{business.hours}</p>
+                </div>
               </div>
-              <p className="text-[15px] font-light text-brand-muted">{business.hours}</p>
-              <p className="mt-1.5 text-[13px] font-light text-brand-muted/70">
-                Closed on Sunday.
+              <p className="pl-12 text-xs text-[#667085]">
+                Sunday closed. Collection and pickup available across Punjab, NCR, Uttarakhand and Saharanpur.
               </p>
             </div>
           </div>
 
-          {/* Map */}
-          <div className="group relative order-1 h-[420px] w-full lg:order-2 lg:h-auto lg:min-h-[560px] lg:w-3/5">
-            <div className="pointer-events-none absolute inset-0 z-10 bg-brand-red/10 opacity-0 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-100" />
+          {/* Embedded Map Column */}
+          <div className="order-1 h-[340px] w-full lg:order-2 lg:h-auto lg:min-h-[500px] lg:w-7/12 bg-gray-50">
             <iframe
               src={mapEmbedSrc}
-              className="h-full w-full border-0 opacity-80 grayscale invert contrast-125 transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:filter-none"
+              className="h-full w-full border-0"
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title={`Map showing the location of ${business.name}`}
+              title={`Map showing location of ${business.name} in Banshiwala Jaajra, Dehradun, Uttarakhand`}
             />
           </div>
         </motion.div>

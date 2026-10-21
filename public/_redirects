@@ -1,7 +1,9 @@
 # 301s for the old region URLs (Netlify / Cloudflare Pages format).
 # On other hosts, add equivalent permanent redirects in the host config.
-/service-areas/punjab        /scrap-car-buyer-punjab       301
-/service-areas/ncr           /scrap-car-buyer-ncr          301
-/service-areas/uttarakhand   /scrap-car-buyer-uttarakhand  301
-/service-areas/saharanpur    /scrap-car-buyer-saharanpur   301
-/service-areas               /#service-areas               301
+/service-areas/dehradun        /scrap-car-buyer-dehradun     301
+/dehradun                      /scrap-car-buyer-dehradun     301
+/service-areas/punjab          /scrap-car-buyer-punjab       301
+/service-areas/ncr             /scrap-car-buyer-ncr          301
+/service-areas/uttarakhand     /scrap-car-buyer-uttarakhand  301
+/service-areas/saharanpur      /scrap-car-buyer-saharanpur   301
+/service-areas                 /#service-areas               301
